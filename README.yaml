@@ -1,0 +1,57 @@
+---
+#
+# This is the canonical configuration for the `README.md`
+# Run `make readme` to rebuild the `README.md`
+#
+
+# Name of this project
+name: terraform-aws-lex-lambda
+# Tags of this project
+tags:
+  - aws
+  - terraform
+  - terraform-modules
+  - lambda
+  - lex
+
+# Categories of this project
+categories:
+  - terraform-modules/lex
+# Logo for this project
+#logo: docs/slalom-logo.png
+
+# License of this project
+license: "APACHE2"
+
+# Copyrights
+copyrights:
+  - name: "Slalom, LLC"
+    url: "https://slalom.com"
+    year: "2019"
+# Canonical GitHub repo
+github_repo: JamesWoolfenden/build-harness
+# Badges to display
+badges:
+  - name: "Build Status"
+    image: "https://api.travis-ci.com/JamesWoolfenden/terraform-aws-lex-lambda.svg?branch=master"
+    url: "https://travis-ci.com/JamesWoolfenden/terraform-aws-lex-lambda"
+  - name: "Latest Release"
+    image: "https://img.shields.io/github/release/JamesWoolfenden/terraform-aws-lex-lambda.svg"
+    url: "https://github.com/JamesWoolfenden/terraform-aws-lex-lambda/releases/latest"
+related:
+  - name: "terraform-aws-codecommit"
+    description: "Storing ones code"
+    url: "https://github.com/jameswoolfenden/terraform-aws-codebuild"
+
+# Short description of this project
+description: |-
+  The terraform module creates a lex lambda cmbination.
+
+  How to use this project
+usage: |-
+include:
+  - "docs/targets.md"
+# Contributors to this project
+contributors:
+  - name: "James Woolfenden"
+    github: "jameswoolfenden"
