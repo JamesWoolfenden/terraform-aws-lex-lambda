@@ -51,6 +51,7 @@ description: |-
 usage: |-
 include:
   - "docs/targets.md"
+  - "docs/terraform.md"
 # Contributors to this project
 contributors:
   - name: "James Woolfenden"

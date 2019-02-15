@@ -69,9 +69,16 @@ File a GitHub [issue](https://github.com/JamesWoolfenden/terraform-aws-lex-lambd
 
 Please use the [issue tracker](https://github.com/JamesWoolfenden/terraform-aws-lex-lambda/issues) to report any bugs or file feature requests.
 
+
+
 ## Copyrights
 
 Copyright © 2019-2019 [Slalom, LLC](https://slalom.com)
+
+
+
+
+
 
 ## License
 

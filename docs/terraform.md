@@ -19,3 +19,4 @@
 | source_code_hash | - | string | - | yes |
 | timeout | - | string | - | yes |
 | vpc_config | - | list | `<list>` | no |
+
