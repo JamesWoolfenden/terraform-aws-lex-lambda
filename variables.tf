@@ -82,6 +82,7 @@ variable "filename" {
 variable "runtime" {
   type        = "string"
   description = "Language the code runs in"
+  default     = "nodejs8.10"
 }
 
 variable "common_tags" {
