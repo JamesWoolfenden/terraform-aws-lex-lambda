@@ -5,3 +5,7 @@ variable "common_tags" {
 variable "description" {
   type = "string"
 }
+
+variable "name" {
+  type = "string"
+}
