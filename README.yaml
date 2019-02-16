@@ -29,7 +29,7 @@ copyrights:
     url: "https://slalom.com"
     year: "2019"
 # Canonical GitHub repo
-github_repo: JamesWoolfenden/build-harness
+github_repo: JamesWoolfenden/terraform-aws-lex-lambda
 # Badges to display
 badges:
   - name: "Build Status"

@@ -1,9 +1,13 @@
 module "lexlambda" {
-  source        = "github.com/jameswoolfenden/terraform-aws-lex-lambda"
-  projectroot   = "${var.projectroot}"
-  description   = "${var.description}"
-  build_timeout = "${var.build_timeout}"
-  name          = "${var.name}"
+  source = "github.com/jameswoolfenden/terraform-aws-lex-lambda"
 
-  common_tags = "${var.common_tags}"
+  description      = "${var.description}"
+  build_timeout    = "${var.build_timeout}"
+  name             = "${var.name}"
+  handler          = ""
+  filename         = ""
+  runtime          = ""
+  account_id       = ""
+  source_code_hash = ""
+  common_tags      = "${var.common_tags}"
 }

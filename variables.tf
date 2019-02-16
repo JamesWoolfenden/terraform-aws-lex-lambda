@@ -1,55 +1,70 @@
 variable "lambdapermmisions" {
-  type = "list"
+  type        = "list"
+  description = "This takes a list object with values to set permissions of a lambda. Can take multiple permission objects"
 }
 
 variable "name" {
-  type = "string"
+  type        = "string"
+  description = "Name of Lambda object"
 }
 
 variable "region_name" {
-  type = "string"
+  type        = "string"
+  description = "Aws region name, eu-west-1..."
 }
 
 variable "role_name" {
-  type = "string"
+  type        = "string"
+  description = "The name you want your IAM role to have"
 }
 
 variable "account_id" {
-  type = "string"
+  type        = "string"
+  description = "The Aws account the policy or object should target"
 }
 
 variable "handler" {
-  type = "string"
+  type        = "string"
+  description = "The file the lambda should import"
 }
 
 variable "source_code_hash" {
-  type = "string"
+  type        = "string"
+  description = "Had of the Lambda source code"
 }
 
 variable "description" {
-  type = "string"
+  type        = "string"
+  description = "Of the the Lambda"
 }
 
 variable "timeout" {
-  type = "string"
+  type        = "string"
+  description = "Of the the lambda"
+  default     = "100"
 }
 
 variable "memory_size" {
-  type = "string"
+  type        = "string"
+  description = "Of the the lambda"
+  default     = "128"
 }
 
 variable "policyname" {
-  type = "string"
+  type        = "string"
+  description = "Attached to the role of the lambda"
 }
 
 variable "envvar" {
-  type    = "map"
-  default = {}
+  type        = "map"
+  default     = {}
+  description = "Optional set of environmental variables for the lambda"
 }
 
 variable "vpc_config" {
-  type    = "list"
-  default = []
+  type        = "list"
+  default     = []
+  description = "Optional Vpc attachment config"
 }
 
 variable "policy" {
@@ -59,13 +74,16 @@ variable "policy" {
 }
 
 variable "filename" {
-  type = "string"
+  type        = "string"
+  description = "Filename attached to the uploading code"
 }
 
 variable "runtime" {
-  type = "string"
+  type        = "string"
+  description = "Language the code runs in"
 }
 
 variable "common_tags" {
-  type = "map"
+  type        = "map"
+  description = "Tags"
 }

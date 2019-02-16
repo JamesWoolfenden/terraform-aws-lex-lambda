@@ -4,8 +4,7 @@
 
 # terraform-aws-lex-lambda [![Build Status](https://travis-ci.com/JamesWoolfenden/terraform-aws-lex-lambda.svg?branch=master)](https://travis-ci.com/JamesWoolfenden/terraform-aws-lex-lambda) [![Latest Release](https://img.shields.io/github/release/JamesWoolfenden/terraform-aws-lex-lambda.svg)](https://github.com/JamesWoolfenden/terraform-aws-lex-lambda/releases/latest)
 
-
-The terraform module creates a lex lambda cmbination.
+The terraform module creates a lex lambda combination.
 
 How to use this project
 
@@ -13,26 +12,11 @@ How to use this project
 
 This project uses the "build-harness" a modified version of the project ["SweetOps"](https://cpco.io/sweetops) from Cloudposse. Sweet indeed.
 
-
 It's 100% Open Source and licensed under the [APACHE2](LICENSE).
-
-
-
-
-
-
-
-
-
 
 ## Usage
 
-
-
-
-
-
-
+blurb to follow
 
 ## Makefile Targets
 
@@ -42,20 +26,38 @@ Available targets:
   help                                Help screen
   help/all                            Display help for all targets
   help/short                          This help short screen
-  lint:                              Lint terraform code
+  lint:
+                              Lint terraform code
 
 ```
 
+## Inputs
 
+| Name | Description | Type | Default | Required |
+|------|-------------|:----:|:-----:|:-----:|
+| account_id | The Aws account the policy or object should target | string | - | yes |
+| common_tags | Tags | map | - | yes |
+| description | Of the the Lambda | string | - | yes |
+| envvar | Optional set of environmental variables for the lambda | map | `<map>` | no |
+| filename | Filename attached to the uploading code | string | - | yes |
+| handler | The file the lambda should import | string | - | yes |
+| lambdapermmisions | This takes a list object with values to set permissions of a lambda. Can take multiple permission objects | list | - | yes |
+| memory_size | Of the the lambda | string | `128` | no |
+| name | Name of Lambda object | string | - | yes |
+| policy | This policy will be applied supplant default if given | string | `` | no |
+| policyname | Attached to the role of the lambda | string | - | yes |
+| region_name | Aws region name, eu-west-1... | string | - | yes |
+| role_name | The name you want your IAM role to have | string | - | yes |
+| runtime | Language the code runs in | string | - | yes |
+| source_code_hash | Had of the Lambda source code | string | - | yes |
+| timeout | Of the the lambda | string | `100` | no |
+| vpc_config | Optional Vpc attachment config | list | `<list>` | no |
 
 ## Related Projects
 
 Check out these related projects.
 
 - [terraform-aws-codecommit](https://github.com/jameswoolfenden/terraform-aws-codebuild) - Storing ones code
-
-
-
 
 ## Help
 
@@ -69,16 +71,9 @@ File a GitHub [issue](https://github.com/JamesWoolfenden/terraform-aws-lex-lambd
 
 Please use the [issue tracker](https://github.com/JamesWoolfenden/terraform-aws-lex-lambda/issues) to report any bugs or file feature requests.
 
-
-
 ## Copyrights
 
 Copyright © 2019-2019 [Slalom, LLC](https://slalom.com)
-
-
-
-
-
 
 ## License
 
@@ -103,25 +98,12 @@ See [LICENSE](LICENSE) for full details.
     specific language governing permissions and limitations
     under the License.
 
-
-
-
-
-
-
-
-
-
-
-
 ### Contributors
 
   [![James Woolfenden][jameswoolfenden_avatar]][jameswoolfenden_homepage]<br/>[James Woolfenden][jameswoolfenden_homepage] |
 
   [jameswoolfenden_homepage]: https://github.com/jameswoolfenden
   [jameswoolfenden_avatar]: https://github.com/jameswoolfenden.png?size=150
-
-
 
 [logo]: https://gist.githubusercontent.com/JamesWoolfenden/5c457434351e9fe732ca22b78fdd7d5e/raw/15933294ae2b00f5dba6557d2be88f4b4da21201/slalom-logo.png
 [website]: https://slalom.com
@@ -133,5 +115,4 @@ See [LICENSE](LICENSE) for full details.
 [share_linkedin]: https://www.linkedin.com/shareArticle?mini=true&title=terraform-aws-lex-lambda&url=https://github.com/JamesWoolfenden/terraform-aws-lex-lambda
 [share_reddit]: https://reddit.com/submit/?url=https://github.com/JamesWoolfenden/terraform-aws-lex-lambda
 [share_facebook]: https://facebook.com/sharer/sharer.php?u=https://github.com/JamesWoolfenden/build-harness
-[share_googleplus]: https://plus.google.com/share?url=https://github.com/JamesWoolfenden/terraform-aws-lex-lambda
 [share_email]: mailto:?subject=terraform-aws-lex-lambda&body=https://github.com/JamesWoolfenden/terraform-aws-lex-lambda
