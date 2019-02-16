@@ -26,6 +26,7 @@ variable "account_id" {
 variable "handler" {
   type        = "string"
   description = "The file the lambda should import"
+  default     = "index.handler"
 }
 
 variable "source_code_hash" {

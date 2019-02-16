@@ -9,3 +9,7 @@ variable "description" {
 variable "name" {
   type = "string"
 }
+
+variable "handler" {
+  type="string"
+}

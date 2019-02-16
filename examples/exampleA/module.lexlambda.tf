@@ -11,7 +11,7 @@ module "lexlambda" {
 
   description      = "${var.description}"
   name             = "${var.name}"
-  handler          = "exports.handler"
+  handler          = "${var.handler}"
   filename         = "${path.cwd}/lambda.zip"
   policyname       = "${var.name}"
   region_name      = "${data.aws_region.current.name}"
