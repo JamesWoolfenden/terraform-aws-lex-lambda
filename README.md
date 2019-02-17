@@ -4,7 +4,10 @@
 
 # terraform-aws-lex-lambda [![Build Status](https://travis-ci.com/JamesWoolfenden/terraform-aws-lex-lambda.svg?branch=master)](https://travis-ci.com/JamesWoolfenden/terraform-aws-lex-lambda) [![Latest Release](https://img.shields.io/github/release/JamesWoolfenden/terraform-aws-lex-lambda.svg)](https://github.com/JamesWoolfenden/terraform-aws-lex-lambda/releases/latest)
 
-The terraform module creates a lex lambda combination.
+The terraform module creates a lex lambda combination. To use a lambda with an intent a number of other objects are either required. In this module I have included a number of reasonable default values and policies.
+This should make it easier to build the lambdas that go with your lex objects.
+The Lambda permission is a array/list this means you can add as many permissions to lambda as you need to.
+The create of roles and or/ policy is configurable with switches.
 
 How to use this project
 
@@ -16,7 +19,29 @@ It's 100% Open Source and licensed under the [APACHE2](LICENSE).
 
 ## Usage
 
-blurb to follow
+```hcl
+module "lexlambda" {
+source = "github.com/jameswoolfenden/terraform-aws-lex-lambda"
+
+lambdapermmisions = [{
+  action       = "lambda:InvokeFunction"
+  statementid  = "Pizza"
+  functionname = "${var.name}"
+  sourcearn    = "arn:aws:lex:${data.aws_region.current.name}:${data.aws_caller_identity.current.account_id}:intent:Pizza:*"
+  principal    = "lex.amazonaws.com"
+}]
+
+description      = "${var.description}"
+name             = "${var.name}"
+filename         = "${path.cwd}/lambda.zip"
+policyname       = "${var.name}"
+region_name      = "${data.aws_region.current.name}"
+role_name        = "${var.name}"
+account_id       = "${data.aws_caller_identity.current.account_id}"
+source_code_hash = "${data.archive_file.lambda.output_base64sha256}"
+common_tags      = "${var.common_tags}"
+}
+```
 
 ## Makefile Targets
 
@@ -40,15 +65,16 @@ Available targets:
 | description | Of the the Lambda | string | - | yes |
 | envvar | Optional set of environmental variables for the lambda | map | `<map>` | no |
 | filename | Filename attached to the uploading code | string | - | yes |
-| handler | The file the lambda should import | string | - | yes |
+| handler | The file the lambda should import | string | `index.handler` | no |
 | lambdapermmisions | This takes a list object with values to set permissions of a lambda. Can take multiple permission objects | list | - | yes |
 | memory_size | Of the the lambda | string | `128` | no |
 | name | Name of Lambda object | string | - | yes |
+| passedrole | Set this to true if you pass an existing your role to your lambda | string | `false` | no |
 | policy | This policy will be applied supplant default if given | string | `` | no |
 | policyname | Attached to the role of the lambda | string | - | yes |
 | region_name | Aws region name, eu-west-1... | string | - | yes |
 | role_name | The name you want your IAM role to have | string | - | yes |
-| runtime | Language the code runs in | string | - | yes |
+| runtime | Language the code runs in | string | `nodejs8.10` | no |
 | source_code_hash | Had of the Lambda source code | string | - | yes |
 | timeout | Of the the lambda | string | `100` | no |
 | vpc_config | Optional Vpc attachment config | list | `<list>` | no |
@@ -114,5 +140,5 @@ See [LICENSE](LICENSE) for full details.
 [share_twitter]: https://twitter.com/intent/tweet/?text=terraform-aws-lex-lambda&url=https://github.com/JamesWoolfenden/terraform-aws-lex-lambda
 [share_linkedin]: https://www.linkedin.com/shareArticle?mini=true&title=terraform-aws-lex-lambda&url=https://github.com/JamesWoolfenden/terraform-aws-lex-lambda
 [share_reddit]: https://reddit.com/submit/?url=https://github.com/JamesWoolfenden/terraform-aws-lex-lambda
-[share_facebook]: https://facebook.com/sharer/sharer.php?u=https://github.com/JamesWoolfenden/build-harness
+[share_facebook]: https://facebook.com/sharer/sharer.php?u=https://github.com/JamesWoolfenden/terraform-aws-lex-lambda
 [share_email]: mailto:?subject=terraform-aws-lex-lambda&body=https://github.com/JamesWoolfenden/terraform-aws-lex-lambda

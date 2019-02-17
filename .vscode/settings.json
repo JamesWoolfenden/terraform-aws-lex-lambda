@@ -1,10 +1,16 @@
 {
     "cSpell.words": [
+        "amazonaws",
         "cloudposse",
         "envvar",
+        "functionname",
         "jameswoolfenden",
         "lambdapermmisions",
+        "lexlambda",
+        "passedrole",
         "policyname",
-        "reddit"
+        "reddit",
+        "sourcearn",
+        "statementid"
     ]
 }
