@@ -1,6 +1,5 @@
 resource "aws_iam_role" "withintent" {
-  count = "${var.passedrole == "" ? 1: 0}"
-  name  = "${var.role_name}"
+  name = "${var.role_name}"
 
   assume_role_policy = <<HERE
 {

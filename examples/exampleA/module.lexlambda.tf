@@ -1,5 +1,5 @@
 module "lexlambda" {
-  source = "github.com/jameswoolfenden/terraform-aws-lex-lambda"
+  source = "../../"
 
   lambdapermmisions = [{
     action       = "lambda:InvokeFunction"
