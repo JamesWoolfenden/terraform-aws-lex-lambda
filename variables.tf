@@ -81,7 +81,7 @@ variable "filename" {
 
 variable "passedrole" {
   description = "Set this to true if you pass an existing your role to your lambda"
-  default     = ""
+  default     = false
 }
 
 variable "runtime" {
