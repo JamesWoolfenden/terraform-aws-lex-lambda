@@ -8,13 +8,10 @@ resource "aws_lambda_function" "withintent" {
   source_code_hash = "${var.source_code_hash}"
   handler          = "${var.handler}"
   timeout          = "${var.timeout}"
+  environment      = ["${var.envvar}"]
+  vpc_config       = "${var.vpc_config}"
+  tags             = "${var.common_tags}"
 
-  #  environment {
-  #    variables = ["${var.envvar}"]
-  #  }
-
-  vpc_config = "${var.vpc_config}"
-  tags       = "${var.common_tags}"
   depends_on = [
     "aws_iam_role.withintent",
     "aws_iam_role_policy.withintent",

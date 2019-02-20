@@ -57,8 +57,8 @@ variable "policyname" {
 }
 
 variable "envvar" {
-  type        = "map"
-  default     = {}
+  type        = "list"
+  default     = []
   description = "Optional set of environmental variables for the lambda"
 }
 
