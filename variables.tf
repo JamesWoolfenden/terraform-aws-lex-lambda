@@ -32,6 +32,7 @@ variable "handler" {
 variable "source_code_hash" {
   type        = "string"
   description = "Had of the Lambda source code"
+  default     = ""
 }
 
 variable "description" {
