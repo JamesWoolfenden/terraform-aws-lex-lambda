@@ -77,6 +77,7 @@ variable "policy" {
 variable "filename" {
   type        = "string"
   description = "Filename attached to the uploading code"
+  default     = ""
 }
 
 variable "runtime" {
@@ -94,4 +95,14 @@ variable "layers" {
   type        = "list"
   description = "Optional add in up 5 lambda layers"
   default     = []
+}
+
+variable "s3_key" {
+  description = "path to the lambda zip"
+  default     = ""
+}
+
+variable "s3_bucket" {
+  description = "path to the lambda bucket"
+  default     = ""
 }
