@@ -75,12 +75,6 @@ variable "policy" {
   description = "This policy will be applied supplant default if given"
 }
 
-variable "filename" {
-  type        = "string"
-  description = "Filename attached to the uploading code"
-  default     = ""
-}
-
 variable "runtime" {
   type        = "string"
   description = "Language the code runs in"

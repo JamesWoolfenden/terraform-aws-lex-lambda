@@ -13,3 +13,11 @@ variable "name" {
 variable "layers" {
   type = "list"
 }
+
+variable "versionpath" {
+  type = "string"
+}
+
+variable "s3_bucket" {
+  type = "string"
+}

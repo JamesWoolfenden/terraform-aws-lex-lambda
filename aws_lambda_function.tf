@@ -1,7 +1,6 @@
 resource "aws_lambda_function" "withintent" {
   description      = "${var.description}"
   environment      = ["${var.envvar}"]
-  filename         = "${var.filename}"
   function_name    = "${var.name}"
   handler          = "${var.handler}"
   layers           = ["${var.layers}"]

@@ -9,3 +9,11 @@ variable "description" {
 variable "name" {
   type = "string"
 }
+
+variable "versionpath" {
+  type = "string"
+}
+
+variable "s3_bucket" {
+  type = "string"
+}

@@ -13,3 +13,11 @@ variable "name" {
 variable "role_name" {
   description = "Role name"
 }
+
+variable "versionpath" {
+  type = "string"
+}
+
+variable "s3_bucket" {
+  type = "string"
+}
