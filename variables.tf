@@ -89,3 +89,9 @@ variable "common_tags" {
   type        = "map"
   description = "Tags"
 }
+
+variable "layers" {
+  type        = "list"
+  description = "Optional add in up 5 lambda layers"
+  default     = []
+}
