@@ -2,14 +2,14 @@
 
 [![Slalom][logo]](https://slalom.com)
 
-# terraform-aws-lex-lambda [![Build Status](https://travis-ci.com/JamesWoolfenden/terraform-aws-lex-lambda.svg?branch=master)](https://travis-ci.com/JamesWoolfenden/terraform-aws-lex-lambda) [![Latest Release](https://img.shields.io/github/release/JamesWoolfenden/terraform-aws-lex-lambda.svg)](https://github.com/JamesWoolfenden/terraform-aws-lex-lambda/releases/latest)
+terraform-aws-lex-lambda [![Build Status](https://api.travis-ci.com/JamesWoolfenden/terraform-aws-lex-lambda.svg?branch=master)](https://travis-ci.com/JamesWoolfenden/terraform-aws-lex-lambda) [![Latest Release](https://img.shields.io/github/release/JamesWoolfenden/terraform-aws-lex-lambda.svg)](https://github.com/JamesWoolfenden/terraform-aws-lex-lambda/releases/latest)
 
 The terraform module creates a lex lambda combination. To use a lambda with an intent a number of other objects are either required. In this module I have included a number of reasonable default values and policies.
 This should make it easier to build the lambdas that go with your lex objects.
-The Lambda permission is a array/list this means you can add as many permissions to lambda as you need to.
+The lamda permission is a array/list this means you can add as many permissions to lambda as you need to.
 The create of roles and or/ policy is configurable with switches.
 
-How to use this project
+How to use this project:
 
 ---
 
@@ -43,19 +43,6 @@ common_tags      = "${var.common_tags}"
 }
 ```
 
-## Makefile Targets
-
-```make
-Available targets:
-
-  help                                Help screen
-  help/all                            Display help for all targets
-  help/short                          This help short screen
-  lint:
-                              Lint terraform code
-
-```
-
 ## Inputs
 
 | Name | Description | Type | Default | Required |
@@ -63,19 +50,20 @@ Available targets:
 | account_id | The Aws account the policy or object should target | string | - | yes |
 | common_tags | Tags | map | - | yes |
 | description | Of the the Lambda | string | - | yes |
-| envvar | Optional set of environmental variables for the lambda | map | `<map>` | no |
-| filename | Filename attached to the uploading code | string | - | yes |
+| envvar | Optional set of environmental variables for the lambda | list | `<list>` | no |
 | handler | The file the lambda should import | string | `index.handler` | no |
 | lambdapermmisions | This takes a list object with values to set permissions of a lambda. Can take multiple permission objects | list | - | yes |
+| layers | Optional add in up 5 lambda layers | list | `<list>` | no |
 | memory_size | Of the the lambda | string | `128` | no |
 | name | Name of Lambda object | string | - | yes |
-| passedrole | Set this to true if you pass an existing your role to your lambda | string | `false` | no |
 | policy | This policy will be applied supplant default if given | string | `` | no |
 | policyname | Attached to the role of the lambda | string | - | yes |
 | region_name | Aws region name, eu-west-1... | string | - | yes |
 | role_name | The name you want your IAM role to have | string | - | yes |
 | runtime | Language the code runs in | string | `nodejs8.10` | no |
-| source_code_hash | Had of the Lambda source code | string | - | yes |
+| s3_bucket | path to the lambda bucket | string | `` | no |
+| s3_key | path to the lambda zip | string | `` | no |
+| source_code_hash | Had of the Lambda source code | string | `` | no |
 | timeout | Of the the lambda | string | `100` | no |
 | vpc_config | Optional Vpc attachment config | list | `<list>` | no |
 
@@ -126,7 +114,8 @@ See [LICENSE](LICENSE) for full details.
 
 ### Contributors
 
-  [![James Woolfenden][jameswoolfenden_avatar]][jameswoolfenden_homepage]<br/>[James Woolfenden][jameswoolfenden_homepage] |
+|  [![James Woolfenden][jameswoolfenden_avatar]][jameswoolfenden_homepage]<br/>[James Woolfenden][jameswoolfenden_homepage] |
+|---|
 
   [jameswoolfenden_homepage]: https://github.com/jameswoolfenden
   [jameswoolfenden_avatar]: https://github.com/jameswoolfenden.png?size=150
@@ -141,4 +130,5 @@ See [LICENSE](LICENSE) for full details.
 [share_linkedin]: https://www.linkedin.com/shareArticle?mini=true&title=terraform-aws-lex-lambda&url=https://github.com/JamesWoolfenden/terraform-aws-lex-lambda
 [share_reddit]: https://reddit.com/submit/?url=https://github.com/JamesWoolfenden/terraform-aws-lex-lambda
 [share_facebook]: https://facebook.com/sharer/sharer.php?u=https://github.com/JamesWoolfenden/terraform-aws-lex-lambda
+[share_googleplus]: https://plus.google.com/share?url=https://github.com/JamesWoolfenden/terraform-aws-lex-lambda
 [share_email]: mailto:?subject=terraform-aws-lex-lambda&body=https://github.com/JamesWoolfenden/terraform-aws-lex-lambda
