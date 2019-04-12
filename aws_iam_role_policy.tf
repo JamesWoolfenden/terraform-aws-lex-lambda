@@ -6,7 +6,8 @@ resource "aws_iam_role_policy" "withintent" {
 
 data "aws_iam_policy_document" "withintent" {
   statement {
-    actions = ["ec2:CreateNetworkInterface",
+    actions = [
+      "ec2:CreateNetworkInterface",
       "ec2:DescribeNetworkInterfaces",
       "ec2:DeleteNetworkInterface",
     ]
@@ -15,7 +16,8 @@ data "aws_iam_policy_document" "withintent" {
   }
 
   statement {
-    actions = ["ssm:getParameter",
+    actions = [
+      "ssm:getParameter",
       "ssm:getParameters",
     ]
 
@@ -23,7 +25,10 @@ data "aws_iam_policy_document" "withintent" {
   }
 
   statement {
-    actions   = ["lex:GetIntent"]
+    actions = [
+      "lex:GetIntent",
+    ]
+
     resources = ["*"]
   }
 }
