@@ -23,6 +23,7 @@ resource "aws_lambda_function" "withintent" {
   lifecycle {
     ignore_changes = [
       "last_modified",
+      "tags",
     ]
   }
 }

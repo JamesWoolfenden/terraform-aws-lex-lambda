@@ -17,4 +17,10 @@ resource "aws_iam_role" "withintent" {
 HERE
 
   tags = "${var.common_tags}"
+
+  lifecycle {
+    ignore_changes = [
+      "tags",
+    ]
+  }
 }
