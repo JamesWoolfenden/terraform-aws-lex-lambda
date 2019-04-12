@@ -19,4 +19,10 @@ resource "aws_lambda_function" "withintent" {
     "aws_iam_role_policy.withintent",
     "aws_iam_role_policy_attachment.withintent",
   ]
+
+  lifecycle {
+    ignore_changes = [
+      "last_modified",
+    ]
+  }
 }
