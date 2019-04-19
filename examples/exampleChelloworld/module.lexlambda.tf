@@ -1,7 +1,7 @@
 module "lexlambda" {
   source = "../../"
 
-  lambdapermmisions = [{
+  lambdapermmissions = [{
     action       = "lambda:InvokeFunction"
     statementid  = "helloworld"
     functionname = "${var.name}"

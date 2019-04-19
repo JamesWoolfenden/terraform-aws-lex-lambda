@@ -23,7 +23,7 @@ It's 100% Open Source and licensed under the [APACHE2](LICENSE).
 module "lexlambda" {
 source = "github.com/jameswoolfenden/terraform-aws-lex-lambda"
 
-lambdapermmisions = [{
+lambdapermmissions = [{
   action       = "lambda:InvokeFunction"
   statementid  = "Pizza"
   functionname = "${var.name}"
