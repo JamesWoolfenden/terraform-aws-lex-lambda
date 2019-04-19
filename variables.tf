@@ -1,4 +1,4 @@
-variable "lambdapermmisions" {
+variable "lambdapermmissions" {
   type        = "list"
   description = "This takes a list object with values to set permissions of a lambda. Can take multiple permission objects"
 }
@@ -27,12 +27,6 @@ variable "handler" {
   type        = "string"
   description = "The file the lambda should import"
   default     = "index.handler"
-}
-
-variable "source_code_hash" {
-  type        = "string"
-  description = "Had of the Lambda source code"
-  default     = ""
 }
 
 variable "description" {
@@ -84,6 +78,12 @@ variable "runtime" {
 variable "common_tags" {
   type        = "map"
   description = "Tags"
+}
+
+variable "prefixdash" {
+  default     = ""
+  type        = "string"
+  description = "Support for renaming on multi-environments"
 }
 
 variable "layers" {
