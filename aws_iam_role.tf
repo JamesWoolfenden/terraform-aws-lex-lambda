@@ -1,5 +1,5 @@
 resource "aws_iam_role" "withintent" {
-  name = "${format("%.64s", var.role_name)}"
+  name = format("%.64s", var.role_name)
 
   assume_role_policy = <<HERE
 {

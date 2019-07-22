@@ -4,17 +4,17 @@ provider "aws" {
 }
 
 provider "null" {
-  version = "1.0"
+  version = "2.1"
 }
 
 provider "local" {
-  version = "1.1"
+  version = "1.3"
 }
 
 provider "template" {
-  version = "2.0"
+  version = "2.1"
 }
 
 provider "archive" {
-  version = "1.1"
+  version = "1.2"
 }

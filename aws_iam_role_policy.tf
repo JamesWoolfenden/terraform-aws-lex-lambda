@@ -1,6 +1,6 @@
 resource "aws_iam_role_policy" "withintent" {
-  name   = "${var.policyname}"
-  role   = "${aws_iam_role.withintent.id}"
+  name   = var.policyname
+  role   = aws_iam_role.withintent.id
   policy = "${var.policy == "" ? data.aws_iam_policy_document.withintent.json : var.policy}"
 }
 

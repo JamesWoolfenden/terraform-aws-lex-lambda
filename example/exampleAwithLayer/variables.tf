@@ -21,3 +21,9 @@ variable "versionpath" {
 variable "s3_bucket" {
   type = string
 }
+
+
+variable "package_version" {
+  type    = string
+  default = ""
+}
