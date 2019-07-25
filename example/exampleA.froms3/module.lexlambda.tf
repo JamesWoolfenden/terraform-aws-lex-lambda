@@ -2,8 +2,8 @@ module "lexlambda" {
   source = "../../"
 
   lambdapermmissions = [{
-    statementid  = "Pizza"
-    source_arn    = "intent:Pizza:*"
+    statementid = "Pizza"
+    source_arn  = "intent:Pizza:*"
   }]
 
   description = var.description

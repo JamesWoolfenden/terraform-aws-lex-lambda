@@ -1,6 +1,7 @@
 variable "lambdapermmissions" {
-  type        = "list"
+  type        = list
   description = "This takes a list object with values to set permissions of a lambda. Can take multiple permission objects"
+  default     = []
 }
 
 variable "name" {
@@ -46,15 +47,16 @@ variable "memory_size" {
   default     = "128"
 }
 
-variable "policyname" {
-  type        = string
-  description = "Attached to the role of the lambda"
+variable "envvar" {
+  type        = map
+  default     = { "Terraform" = "Bug" }
+  description = "Optional set of environmental variables for the lambda"
 }
 
-variable "policy" {
-  type        = string
-  default     = ""
-  description = "This policy will be applied supplant default if given"
+variable "vpc_config" {
+  type        = map
+  default     = {}
+  description = "Optional Vpc attachment config"
 }
 
 variable "runtime" {
@@ -74,29 +76,40 @@ variable "prefixdash" {
   description = "Support for renaming on multi-environments"
 }
 
+variable "layers" {
+  type        = list
+  description = "Optional add in up 5 lambda layers"
+  default     = []
+}
+
 variable "s3_key" {
-  type        = string
   description = "path to the lambda zip"
+  type        = string
   default     = ""
 }
 
 variable "s3_bucket" {
-  type        = string
   description = "path to the lambda bucket"
+  type        = string
   default     = ""
 }
 
-variable "subnet_ids" {
-  type    = list
-  default = []
+variable "principal" {
+  type    = string
+  default = "lex.amazonaws.com"
+}
+
+variable "action" {
+  type    = string
+  default = "lambda:InvokeFunction"
 }
 
 variable "security_group_ids" {
-  type    = list
+  type    = list(string)
   default = []
 }
 
-variable "layers" {
-  type    = list
+variable "subnet_ids" {
+  type    = list(string)
   default = []
 }

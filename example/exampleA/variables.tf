@@ -1,8 +1,10 @@
+
 variable "common_tags" {
-  type = map
+  type        = map
+  description = "Implements the common tags scheme"
 }
 
-variable "description" {
+variable "s3_bucket" {
   type = string
 }
 
@@ -10,16 +12,7 @@ variable "name" {
   type = string
 }
 
-variable "versionpath" {
-  type = string
-}
-
-variable "s3_bucket" {
-  type = string
-}
-
-
 variable "package_version" {
   type    = string
-  default = ""
+  default = "1"
 }
