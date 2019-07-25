@@ -41,27 +41,27 @@ common_tags      = var.common_tags
 
 | Name | Description | Type | Default | Required |
 |------|-------------|:----:|:-----:|:-----:|
-| account\_id | The Aws account the policy or object should target | string | n/a | yes |
-| action |  | string | `"lambda:InvokeFunction"` | no |
-| common\_tags | Tags | map | n/a | yes |
-| description | Of the the Lambda | string | n/a | yes |
-| envvar | Optional set of environmental variables for the lambda | map | `{ "Terraform": "Bug" }` | no |
-| handler | The file the lambda should import | string | `"index.handler"` | no |
-| lambdapermmissions | This takes a list object with values to set permissions of a lambda. Can take multiple permission objects | list | `[]` | no |
-| layers | Optional add in up 5 lambda layers | list | `[]` | no |
-| memory\_size | Of the the lambda | string | `"128"` | no |
-| name | Name of Lambda object | string | n/a | yes |
-| prefixdash | Support for renaming on multi-environments | string | `""` | no |
-| principal |  | string | `"lex.amazonaws.com"` | no |
-| region\_name | Aws region name, eu-west-1... | string | n/a | yes |
-| role\_name | The name you want your IAM role to have | string | n/a | yes |
-| runtime | Language the code runs in | string | `"nodejs8.10"` | no |
-| s3\_bucket | path to the lambda bucket | string | `""` | no |
-| s3\_key | path to the lambda zip | string | `""` | no |
-| security\_group\_ids |  | list(string) | `[]` | no |
-| subnet\_ids |  | list(string) | `[]` | no |
-| timeout | Of the the lambda | string | `"100"` | no |
-| vpc\_config | Optional Vpc attachment config | map | `{}` | no |
+| account\_id | The Aws account the policy or object should target | string | n/a | yes |
+| action |  | string | `"lambda:InvokeFunction"` | no |
+| common\_tags | Tags | map | n/a | yes |
+| description | Of the the Lambda | string | n/a | yes |
+| envvar | Optional set of environmental variables for the lambda | map | `{ "Terraform": "Bug" }` | no |
+| handler | The file the lambda should import | string | `"index.handler"` | no |
+| lambdapermmissions | This takes a list object with values to set permissions of a lambda. Can take multiple permission objects | list | `[]` | no |
+| layers | Optional add in up 5 lambda layers | list | `[]` | no |
+| memory\_size | Of the the lambda | string | `"128"` | no |
+| name | Name of Lambda object | string | n/a | yes |
+| prefixdash | Support for renaming on multi-environments | string | `""` | no |
+| principal |  | string | `"lex.amazonaws.com"` | no |
+| region\_name | Aws region name, eu-west-1... | string | n/a | yes |
+| role\_name | The name you want your IAM role to have | string | n/a | yes |
+| runtime | Language the code runs in | string | `"nodejs8.10"` | no |
+| s3\_bucket | path to the lambda bucket | string | `""` | no |
+| s3\_key | path to the lambda zip | string | `""` | no |
+| security\_group\_ids |  | list(string) | `[]` | no |
+| subnet\_ids |  | list(string) | `[]` | no |
+| timeout | Of the the lambda | string | `"100"` | no |
+| vpc\_config | Optional Vpc attachment config | map | `{}` | no |
 
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Related Projects
