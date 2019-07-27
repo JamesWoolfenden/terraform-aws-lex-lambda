@@ -2,10 +2,9 @@
 
 terraform-aws-lex-lambda [![Build Status](https://api.travis-ci.com/JamesWoolfenden/terraform-aws-lex-lambda.svg?branch=master)](https://travis-ci.com/JamesWoolfenden/terraform-aws-lex-lambda) [![Latest Release](https://img.shields.io/github/release/JamesWoolfenden/terraform-aws-lex-lambda.svg)](https://github.com/JamesWoolfenden/terraform-aws-lex-lambda/releases/latest)
 
-The terraform module creates a lex lambda combination. To use a lambda with an intent a number of other objects are either required. In this module I have included a number of reasonable default values and policies.
+The terraform module creates lambda with permissions, for my purposes a lex lambda combination. To use a lambda with an intent a number of other objects are either required. In this module I have included a number of reasonable default values.
 This should make it easier to build the lambdas that go with your lex objects.
 The lamda permission is a array/list this means you can add as many permissions to lambda as you need to.
-The create of roles and or/ policy is configurable with switches.
 
 How to use this project:
 
@@ -43,25 +42,35 @@ common_tags      = var.common_tags
 |------|-------------|:----:|:-----:|:-----:|
 | account\_id | The Aws account the policy or object should target | string | n/a | yes |
 | action |  | string | `"lambda:InvokeFunction"` | no |
-| common\_tags | Tags | map | n/a | yes |
+| common\_tags | Implements the common tags scheme | map | n/a | yes |
 | description | Of the the Lambda | string | n/a | yes |
 | envvar | Optional set of environmental variables for the lambda | map | `{ "Terraform": "Bug" }` | no |
+| filename | name of zip file if any | string | `"null"` | no |
 | handler | The file the lambda should import | string | `"index.handler"` | no |
 | lambdapermmissions | This takes a list object with values to set permissions of a lambda. Can take multiple permission objects | list | `[]` | no |
-| layers | Optional add in up 5 lambda layers | list | `[]` | no |
+| layers | Optionally, add in up 5 lambda layers | list | `[]` | no |
 | memory\_size | Of the the lambda | string | `"128"` | no |
 | name | Name of Lambda object | string | n/a | yes |
 | prefixdash | Support for renaming on multi-environments | string | `""` | no |
 | principal |  | string | `"lex.amazonaws.com"` | no |
 | region\_name | Aws region name, eu-west-1... | string | n/a | yes |
-| role\_name | The name you want your IAM role to have | string | n/a | yes |
+| role\_arn | The name you want your IAM role to have | string | n/a | yes |
 | runtime | Language the code runs in | string | `"nodejs8.10"` | no |
-| s3\_bucket | path to the lambda bucket | string | `""` | no |
-| s3\_key | path to the lambda zip | string | `""` | no |
+| s3\_bucket | path to the lambda bucket | string | `"null"` | no |
+| s3\_key | path to the lambda zip | string | `"null"` | no |
 | security\_group\_ids |  | list(string) | `[]` | no |
 | subnet\_ids |  | list(string) | `[]` | no |
 | timeout | Of the the lambda | string | `"100"` | no |
 | vpc\_config | Optional Vpc attachment config | map | `{}` | no |
+
+## Outputs
+
+| Name | Description |
+|------|-------------|
+| lambda\_arn |  |
+| memory |  |
+| source\_code\_size |  |
+| timeout |  |
 
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Related Projects

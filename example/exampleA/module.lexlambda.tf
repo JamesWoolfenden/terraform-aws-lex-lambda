@@ -11,7 +11,6 @@ module "lexlambda" {
   description = "Best Pizza!!"
   name        = var.name
   region_name = data.aws_region.current.name
-  role_name   = var.name
-  s3_bucket   = var.s3_bucket
-  s3_key      = local.s3_key
+  role_arn    = data.aws_iam_role.lambda.arn
+  filename    = "${path.module}/lambda.zip"
 }

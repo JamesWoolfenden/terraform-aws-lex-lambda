@@ -14,7 +14,7 @@ variable "region_name" {
   description = "Aws region name, eu-west-1..."
 }
 
-variable "role_name" {
+variable "role_arn" {
   type        = string
   description = "The name you want your IAM role to have"
 }
@@ -67,7 +67,7 @@ variable "runtime" {
 
 variable "common_tags" {
   type        = map
-  description = "Tags"
+  description = "Implements the common tags scheme"
 }
 
 variable "prefixdash" {
@@ -78,20 +78,20 @@ variable "prefixdash" {
 
 variable "layers" {
   type        = list
-  description = "Optional add in up 5 lambda layers"
+  description = "Optionally, add in up 5 lambda layers"
   default     = []
 }
 
 variable "s3_key" {
   description = "path to the lambda zip"
   type        = string
-  default     = ""
+  default     = null
 }
 
 variable "s3_bucket" {
   description = "path to the lambda bucket"
   type        = string
-  default     = ""
+  default     = null
 }
 
 variable "principal" {
@@ -112,4 +112,10 @@ variable "security_group_ids" {
 variable "subnet_ids" {
   type    = list(string)
   default = []
+}
+
+variable "filename" {
+  type        = string
+  description = "name of zip file if any"
+  default     = null
 }

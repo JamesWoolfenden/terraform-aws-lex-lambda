@@ -16,3 +16,9 @@ variable "package_version" {
   type    = string
   default = "1"
 }
+
+variable "role" {
+  type        = string
+  default     = ""
+  description = "The name of role, if any"
+}

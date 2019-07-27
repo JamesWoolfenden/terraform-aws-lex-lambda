@@ -26,6 +26,8 @@ p:
 build: init
 	terraform apply -auto-approve
 
+apply: build
+
 check: init
 	terraform plan -detailed-exitcode
 
