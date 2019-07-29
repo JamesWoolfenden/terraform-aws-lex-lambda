@@ -86,19 +86,30 @@ module "lexlambda" {
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Further work
 
-Connection to cloudwatch metric and attach subscription to slack
-Determine when ConcurrentExecutions or Invocations exceeds your threshold
-<https://docs.aws.amazon.com/lambda/latest/dg/monitoring-functions-metrics.html>
- and <https://aws.amazon.com/blogs/architecture/best-practices-for-developing-on-aws-lambda/?sc_channel=sm&sc_campaign=AWS_Blog&sc_publisher=LINKEDIN&sc_country=Global&sc_geo=GLOBAL&sc_outcome=awareness&trk=AWS_Blog_LINKEDIN&sc_category=AWS_Lambda,AWS+Lambda&linkId=70615743>
-and connect up the aws chatbot to slack/bot <https://us-east-2.console.aws.amazon.com/chatbot/home#/>
-<https://docs.aws.amazon.com/chatbot/latest/adminguide/setting-up.html>
+Connection to cloudwatch metric and attach subscription to Slack.
 
-Add support for sns subscriptions.
+Determine when ConcurrentExecutions or Invocations exceeds your threshold
+
+- <https://docs.aws.amazon.com/lambda/latest/dg/monitoring-functions-metrics.html>
+and
+- <https://aws.amazon.com/blogs/architecture/best-practices-for-developing-on-aws-lambda/?sc_channel=sm&sc_campaign=AWS_Blog&sc_publisher=LINKEDIN&sc_country=Global&sc_geo=GLOBAL&sc_outcome=awareness&trk=AWS_Blog_LINKEDIN&sc_category=AWS_Lambda,AWS+Lambda&linkId=70615743>
+
+and connect up the aws chatbot to slack/bot
+
+- <https://us-east-2.console.aws.amazon.com/chatbot/home#/>
+- <https://docs.aws.amazon.com/chatbot/latest/adminguide/setting-up.html>
+
+General:
+
+- <https://www.concurrencylabs.com/blog/how-to-operate-aws-lambda/>
+- Add support for sns subscriptions.
+- Add in support for keeping lambda warm.
 
 What alarms are important:
-https://www.concurrencylabs.com/blog/how-to-operate-aws-lambda/
-https://dev.to/frosnerd/monitoring-aws-lambda-functions-with-cloudwatch-1nap
-https://aws.amazon.com/blogs/compute/investigating-spikes-in-aws-lambda-function-concurrency/
+
+- <https://www.concurrencylabs.com/blog/how-to-operate-aws-lambda/>
+- <https://dev.to/frosnerd/monitoring-aws-lambda-functions-with-cloudwatch-1nap>
+- <https://aws.amazon.com/blogs/compute/investigating-spikes-in-aws-lambda-function-concurrency/>
 
 Right sizing Lambdas:
 
@@ -106,6 +117,7 @@ Right sizing Lambdas:
 - no of failed or throttled
 - memory usage - am i over provisioned?
 - memory usage - more tin required?
+- size of payload is related to the start time
 
 ## Related Projects
 
