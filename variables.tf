@@ -119,3 +119,9 @@ variable "filename" {
   description = "name of zip file if any"
   default     = null
 }
+
+variable "alarms_enabled" {
+  type        = bool
+  description = "Cloudwatch alarms enabled"
+  default     = false
+}

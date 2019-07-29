@@ -42,6 +42,7 @@ common_tags      = var.common_tags
 |------|-------------|:----:|:-----:|:-----:|
 | account\_id | The Aws account the policy or object should target | string | n/a | yes |
 | action |  | string | `"lambda:InvokeFunction"` | no |
+| alarms\_enabled | Cloudwatch alarms enabled | bool | `"false"` | no |
 | common\_tags | Implements the common tags scheme | map | n/a | yes |
 | description | Of the the Lambda | string | n/a | yes |
 | envvar | Optional set of environmental variables for the lambda | map | `{ "Terraform": "Bug" }` | no |
@@ -50,6 +51,13 @@ common_tags      = var.common_tags
 | lambdapermmissions | This takes a list object with values to set permissions of a lambda. Can take multiple permission objects | list | `[]` | no |
 | layers | Optionally, add in up 5 lambda layers | list | `[]` | no |
 | memory\_size | Of the the lambda | string | `"128"` | no |
+| metric\_comparison\_operator |  | string | `"GreaterThanThreshold"` | no |
+| metric\_datapoints\_to\_alarm |  | number | `"1"` | no |
+| metric\_evaluation\_periods |  | number | `"1"` | no |
+| metric\_metric\_name |  | string | `"Invocations"` | no |
+| metric\_period |  | string | `"300"` | no |
+| metric\_statistic |  | string | `"Average"` | no |
+| metric\_threshold |  | number | `"100"` | no |
 | name | Name of Lambda object | string | n/a | yes |
 | prefixdash | Support for renaming on multi-environments | string | `""` | no |
 | principal |  | string | `"lex.amazonaws.com"` | no |
@@ -73,6 +81,29 @@ common_tags      = var.common_tags
 | timeout |  |
 
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+## Further work
+
+Connection to cloudwatch metric and attach subscription to slack
+Determine when ConcurrentExecutions or Invocations exceeds your threshold
+<https://docs.aws.amazon.com/lambda/latest/dg/monitoring-functions-metrics.html>
+ and <https://aws.amazon.com/blogs/architecture/best-practices-for-developing-on-aws-lambda/?sc_channel=sm&sc_campaign=AWS_Blog&sc_publisher=LINKEDIN&sc_country=Global&sc_geo=GLOBAL&sc_outcome=awareness&trk=AWS_Blog_LINKEDIN&sc_category=AWS_Lambda,AWS+Lambda&linkId=70615743>
+and connect up the aws chatbot to slack/bot <https://us-east-2.console.aws.amazon.com/chatbot/home#/>
+<https://docs.aws.amazon.com/chatbot/latest/adminguide/setting-up.html>
+
+Add support for sns subscriptions.
+
+What alarms are important:
+https://www.concurrencylabs.com/blog/how-to-operate-aws-lambda/
+https://dev.to/frosnerd/monitoring-aws-lambda-functions-with-cloudwatch-1nap
+https://aws.amazon.com/blogs/compute/investigating-spikes-in-aws-lambda-function-concurrency/
+
+Right sizing Lambdas:
+
+- timeouts to close to invocation length
+- no of failed or throttled
+- memory usage - am i over provisioned?
+- memory usage - more tin required?
+
 ## Related Projects
 
 Check out these related projects.
