@@ -19,7 +19,7 @@ This is a minimal example **ExampeA**, but with Cloudwatch alarms enabled.
 ```hcl
 module "lexlambda" {
   source = "github.com/jameswoolfenden/terraform-aws-lex-lambda"
-  version=
+  version= "0.3.40"
 
   lambdapermmissions = [{
     intent     = "Pizza"
@@ -79,7 +79,7 @@ module "lexlambda" {
 | Name | Description |
 |------|-------------|
 | lambda\_arn |  |
-| memory |  |
+| memory\_size |  |
 | source\_code\_size |  |
 | timeout |  |
 

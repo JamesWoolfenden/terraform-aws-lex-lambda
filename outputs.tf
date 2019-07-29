@@ -1,4 +1,4 @@
-output "memory" {
+output "memory_size" {
   value = var.memory_size
 }
 
