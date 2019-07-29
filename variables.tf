@@ -100,18 +100,21 @@ variable "principal" {
 }
 
 variable "action" {
-  type    = string
-  default = "lambda:InvokeFunction"
+  description = "Action for the Lambda permission"
+  type        = string
+  default     = "lambda:InvokeFunction"
 }
 
 variable "security_group_ids" {
-  type    = list(string)
-  default = []
+  description = "The IDs of some security groups"
+  type        = list(string)
+  default     = []
 }
 
 variable "subnet_ids" {
-  type    = list(string)
-  default = []
+  description = "Subnet IDs..."
+  type        = list(string)
+  default     = []
 }
 
 variable "filename" {
@@ -124,4 +127,43 @@ variable "alarms_enabled" {
   type        = bool
   description = "Cloudwatch alarms enabled"
   default     = false
+}
+
+
+variable "metric_comparison_operator" {
+  description = "For Cloudwatch Alarms"
+  type        = string
+  default     = "GreaterThanThreshold"
+}
+
+variable "metric_datapoints_to_alarm" {
+  description = "For Cloudwatch Alarms"
+  type        = number
+  default     = 1
+}
+
+variable "metric_evaluation_periods" {
+  description = "For Cloudwatch Alarms"
+  type        = number
+  default     = 1
+}
+
+variable "metric_metric_name" {
+  type    = string
+  default = "Invocations"
+}
+
+variable "metric_period" {
+  type    = number
+  default = 300
+}
+
+variable "metric_statistic" {
+  default = "Average"
+}
+
+variable "metric_threshold" {
+  type = number
+
+  default = 100
 }

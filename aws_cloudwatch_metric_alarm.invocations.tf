@@ -17,35 +17,3 @@ resource "aws_cloudwatch_metric_alarm" "invocations" {
     "FunctionName" = var.name
   }
 }
-
-variable "metric_comparison_operator" {
-  default = "GreaterThanThreshold"
-}
-
-variable "metric_datapoints_to_alarm" {
-  type    = number
-  default = 1
-}
-
-variable "metric_evaluation_periods" {
-  type    = number
-  default = 1
-}
-
-variable "metric_metric_name" {
-  default = "Invocations"
-}
-
-variable "metric_period" {
-  default = 300
-}
-
-variable "metric_statistic" {
-  default = "Average"
-}
-
-variable "metric_threshold" {
-  type = number
-
-  default = 100
-}

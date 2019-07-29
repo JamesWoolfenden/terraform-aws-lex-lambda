@@ -41,7 +41,7 @@ common_tags      = var.common_tags
 | Name | Description | Type | Default | Required |
 |------|-------------|:----:|:-----:|:-----:|
 | account\_id | The Aws account the policy or object should target | string | n/a | yes |
-| action |  | string | `"lambda:InvokeFunction"` | no |
+| action | Action for the Lambda permission | string | `"lambda:InvokeFunction"` | no |
 | alarms\_enabled | Cloudwatch alarms enabled | bool | `"false"` | no |
 | common\_tags | Implements the common tags scheme | map | n/a | yes |
 | description | Of the the Lambda | string | n/a | yes |
@@ -51,13 +51,13 @@ common_tags      = var.common_tags
 | lambdapermmissions | This takes a list object with values to set permissions of a lambda. Can take multiple permission objects | list | `[]` | no |
 | layers | Optionally, add in up 5 lambda layers | list | `[]` | no |
 | memory\_size | Of the the lambda | string | `"128"` | no |
-| metric\_comparison\_operator |  | string | `"GreaterThanThreshold"` | no |
-| metric\_datapoints\_to\_alarm |  | number | `"1"` | no |
-| metric\_evaluation\_periods |  | number | `"1"` | no |
+| metric\_comparison\_operator | For Cloudwatch Alarms | string | `"GreaterThanThreshold"` | no |
+| metric\_datapoints\_to\_alarm | For Cloudwatch Alarms | number | `"1"` | no |
+| metric\_evaluation\_periods | For Cloudwatch Alarms | number | `"1"` | no |
 | metric\_metric\_name |  | string | `"Invocations"` | no |
-| metric\_period |  | string | `"300"` | no |
+| metric\_period |  | number | `"300"` | no |
 | metric\_statistic |  | string | `"Average"` | no |
-| metric\_threshold |  | number | `"100"` | no |
+| metric\_threshold |  | number | `"100"` | no |
 | name | Name of Lambda object | string | n/a | yes |
 | prefixdash | Support for renaming on multi-environments | string | `""` | no |
 | principal |  | string | `"lex.amazonaws.com"` | no |
@@ -66,8 +66,8 @@ common_tags      = var.common_tags
 | runtime | Language the code runs in | string | `"nodejs8.10"` | no |
 | s3\_bucket | path to the lambda bucket | string | `"null"` | no |
 | s3\_key | path to the lambda zip | string | `"null"` | no |
-| security\_group\_ids |  | list(string) | `[]` | no |
-| subnet\_ids |  | list(string) | `[]` | no |
+| security\_group\_ids | The IDs of some security groups | list(string) | `[]` | no |
+| subnet\_ids | Subnet IDs... | list(string) | `[]` | no |
 | timeout | Of the the lambda | string | `"100"` | no |
 | vpc\_config | Optional Vpc attachment config | map | `{}` | no |
 
