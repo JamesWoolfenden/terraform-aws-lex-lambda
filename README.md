@@ -1,6 +1,8 @@
 [![Slalom][logo]](https://slalom.com)
 
-terraform-aws-lex-lambda [![Build Status](https://api.travis-ci.com/JamesWoolfenden/terraform-aws-lex-lambda.svg?branch=master)](https://travis-ci.com/JamesWoolfenden/terraform-aws-lex-lambda) [![Latest Release](https://img.shields.io/github/release/JamesWoolfenden/terraform-aws-lex-lambda.svg)](https://github.com/JamesWoolfenden/terraform-aws-lex-lambda/releases/latest)
+# terraform-aws-lex-lambda
+
+ [![Build Status](https://api.travis-ci.com/JamesWoolfenden/terraform-aws-lex-lambda.svg?branch=master)](https://travis-ci.com/JamesWoolfenden/terraform-aws-lex-lambda) [![Latest Release](https://img.shields.io/github/release/JamesWoolfenden/terraform-aws-lex-lambda.svg)](https://github.com/JamesWoolfenden/terraform-aws-lex-lambda/releases/latest)
 
 The terraform module creates lambda with permissions, for my purposes a lex lambda combination. To use a lambda with an intent a number of other objects are either required. In this module I have included a number of reasonable default values.
 This should make it easier to build the lambdas that go with your lex objects.
