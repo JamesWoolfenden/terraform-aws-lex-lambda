@@ -4,7 +4,8 @@
 
  [![Build Status](https://api.travis-ci.com/JamesWoolfenden/terraform-aws-lex-lambda.svg?branch=master)](https://travis-ci.com/JamesWoolfenden/terraform-aws-lex-lambda) [![Latest Release](https://img.shields.io/github/release/JamesWoolfenden/terraform-aws-lex-lambda.svg)](https://github.com/JamesWoolfenden/terraform-aws-lex-lambda/releases/latest)
 
-The terraform module creates lambda with permissions, for my purposes a lex lambda combination. To use a lambda with an intent a number of other objects are either required. In this module I have included a number of reasonable default values.
+The terraform module creates lambda with permissions, for my purposes a lex lambda combination bit options for IAM and CLoudwatch.
+To use a lambda with an intent a number of other objects are either required. In this module I have included a number of reasonable default values.
 This should make it easier to build the lambdas that go with your lex objects.
 The lamda permission is a array/list this means you can add as many permissions to lambda as you need to.
 
@@ -16,7 +17,7 @@ It's 100% Open Source and licensed under the [APACHE2](LICENSE).
 
 ## Usage
 
-This is a minimal example **ExampeA**, but with Cloudwatch alarms enabled.
+This is a minimal example **ExampleA**, but with Cloudwatch alarms enabled.
 
 ```hcl
 module "lexlambda" {
