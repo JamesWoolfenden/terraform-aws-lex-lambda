@@ -14,25 +14,28 @@ It's 100% Open Source and licensed under the [APACHE2](LICENSE).
 
 ## Usage
 
+This is a minimal example **ExampeA**, but with Cloudwatch alarms enabled.
+
 ```hcl
 module "lexlambda" {
-source = "github.com/jameswoolfenden/terraform-aws-lex-lambda"
+  source = "github.com/jameswoolfenden/terraform-aws-lex-lambda"
+  version=
 
-lambdapermmissions = [{
-  intent       = "Pizza"
-  sourcearn    = "arn:aws:lex:${data.aws_region.current.name}:${data.aws_caller_identity.current.account_id}:intent:Pizza:*"
-}]
+  lambdapermmissions = [{
+    intent     = "Pizza"
+    source_arn = "Pizza:*"
+  }]
 
-description      = var.description
-name             = var.name
-filename         = "${path.cwd}/lambda.zip"
-policyname       = var.name
-region_name      = data.aws_region.current.name
-role_name        = var.name
-account_id       = data.aws_caller_identity.current.account_id
-source_code_hash = data.archive_file.lambda.output_base64sha256
-common_tags      = var.common_tags
+  account_id     = data.aws_caller_identity.current.account_id
+  alarms_enabled = true
+  common_tags    = var.common_tags
+  description    = "Best Pizza!!"
+  filename       = "${path.module}/lambda.zip"
+  name           = var.name
+  region_name    = data.aws_region.current.name
+  role_arn       = data.aws_iam_role.lambda.arn
 }
+
 ```
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
