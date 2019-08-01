@@ -5,7 +5,7 @@ resource "aws_lambda_function" "withintent" {
   handler       = var.handler
   layers        = var.layers
   memory_size   = var.memory_size
-  role          = var.role_arn == "" ? aws_iam_role.lambda.0.arn : var.role_arn
+  role          = var.role_arn
   runtime       = var.runtime
   s3_bucket     = var.s3_bucket
   s3_key        = var.s3_key
