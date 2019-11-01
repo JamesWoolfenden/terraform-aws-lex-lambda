@@ -19,7 +19,7 @@ It's 100% Open Source and licensed under the [APACHE2](LICENSE).
 
 This is a minimal example **ExampleA**, but with Cloudwatch alarms enabled.
 
-```hcl
+```terraform
 module lexlambda {
   source = "github.com/jameswoolfenden/terraform-aws-lex-lambda"
   version= "0.3.40"
@@ -38,11 +38,12 @@ module lexlambda {
   region_name    = data.aws_region.current.name
   role_arn       = data.aws_iam_role.lambda.arn
 }
-
 ```
+
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 I_WANT_TO_BE_REPLACED
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+
 ## Related Projects
 
 Check out these related projects.

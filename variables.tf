@@ -1,41 +1,41 @@
-variable lambdapermmissions {
+variable "lambdapermmissions" {
   type        = list
   description = "This takes a list object with values to set permissions of a lambda. Can take multiple permission objects"
   default     = []
 }
 
-variable name {
+variable "name" {
   type        = string
   description = "Name of Lambda object"
 }
 
-variable region_name {
+variable "region_name" {
   type        = string
   description = "Aws region name, eu-west-1..."
 }
 
-variable role_arn {
+variable "role_arn" {
   type        = string
   description = "The name you want your IAM role to have"
 }
 
-variable account_id {
+variable "account_id" {
   type        = string
   description = "The Aws account the policy or object should target"
 }
 
-variable handler {
+variable "handler" {
   type        = string
   description = "The file the lambda should import"
   default     = "index.handler"
 }
 
-variable description {
+variable "description" {
   type        = string
   description = "Of the the Lambda"
 }
 
-variable timeout {
+variable "timeout" {
   type        = string
   description = "Of the the lambda"
   default     = "100"

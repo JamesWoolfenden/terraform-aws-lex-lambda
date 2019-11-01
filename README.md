@@ -41,6 +41,27 @@ module lexlambda {
 ```
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+## Inputs
+
+| Name | Description | Type | Default | Required |
+|------|-------------|:----:|:-----:|:-----:|
+| account\_id | The Aws account the policy or object should target | string | n/a | yes |
+| description | Of the the Lambda | string | n/a | yes |
+| handler | The file the lambda should import | string | `"index.handler"` | no |
+| lambdapermmissions | This takes a list object with values to set permissions of a lambda. Can take multiple permission objects | list | `[]` | no |
+| name | Name of Lambda object | string | n/a | yes |
+| region\_name | Aws region name, eu-west-1... | string | n/a | yes |
+| role\_arn | The name you want your IAM role to have | string | n/a | yes |
+| timeout | Of the the lambda | string | `"100"` | no |
+
+## Outputs
+
+| Name | Description |
+|------|-------------|
+| lambda\_arn |  |
+| memory\_size |  |
+| source\_code\_size |  |
+| timeout |  |
 
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
