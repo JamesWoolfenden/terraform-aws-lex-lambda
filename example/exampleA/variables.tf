@@ -1,23 +1,23 @@
 
-variable "common_tags" {
+variable common_tags {
   type        = map
   description = "Implements the common tags scheme"
 }
 
-variable "s3_bucket" {
+variable s3_bucket {
   type = string
 }
 
-variable "name" {
+variable name {
   type = string
 }
 
-variable "package_version" {
+variable package_version {
   type    = string
   default = "1"
 }
 
-variable "role" {
+variable role {
   type        = string
   default     = ""
   description = "The name of role, if any"

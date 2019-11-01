@@ -1,4 +1,4 @@
-resource "aws_lambda_permission" "withintent" {
+resource aws_lambda_permission withintent {
   count         = length(var.lambdapermmissions)
   statement_id  = "lex-${var.region_name}-${var.prefixdash}${lookup(var.lambdapermmissions[count.index], "intent")}"
   action        = var.action

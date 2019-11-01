@@ -1,4 +1,4 @@
-resource "aws_sns_topic" "lambda" {
+resource aws_sns_topic lambda {
   count  = var.alarms_enabled == true ? 1 : 0
   policy = data.aws_iam_policy_document.sns.json
 

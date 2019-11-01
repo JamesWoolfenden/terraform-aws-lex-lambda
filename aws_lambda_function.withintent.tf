@@ -1,4 +1,4 @@
-resource "aws_lambda_function" "withintent" {
+resource aws_lambda_function withintent {
   description   = var.description
   function_name = var.name
   filename      = var.filename
@@ -20,7 +20,6 @@ resource "aws_lambda_function" "withintent" {
     subnet_ids         = var.subnet_ids
     security_group_ids = var.security_group_ids
   }
-
 
   lifecycle {
     ignore_changes = [
