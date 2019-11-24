@@ -13,3 +13,7 @@ output source_code_size {
 output lambda_arn {
   value = module.lexlambda.lambda_arn
 }
+
+output lambda {
+  value = module.lexlambda
+}

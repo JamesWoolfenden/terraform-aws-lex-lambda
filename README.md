@@ -58,8 +58,9 @@ module lexlambda {
 
 | Name | Description |
 |------|-------------|
+| lambda |  |
 | lambda\_arn |  |
-| memory\_size |  |
+| memory\_size | required by Hashicorp |
 | source\_code\_size |  |
 | timeout |  |
 

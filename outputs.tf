@@ -13,3 +13,7 @@ output "source_code_size" {
 output "lambda_arn" {
   value = aws_lambda_function.withintent.arn
 }
+
+output "lambda" {
+  value = aws_lambda_function.withintent
+}
