@@ -19,5 +19,7 @@ resource aws_sns_topic lambda {
 }
 POLICY
 
+  kms_master_key_id = var.kms_master_key_id
+
   tags = var.common_tags
 }
