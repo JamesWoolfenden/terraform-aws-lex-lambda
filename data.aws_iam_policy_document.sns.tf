@@ -26,7 +26,8 @@ data aws_iam_policy_document sns {
       identifiers = ["*"]
 
     }
-    resources = [aws_sns_topic.lambda.arn]
+    resources = ["arn:aws:sns:${data.aws_region.current.name}:${data.aws_caller_identity.current.account_id}:pizza-invocations"]
+
 
   }
 }

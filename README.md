@@ -61,7 +61,7 @@ module lexlambda {
 | alarms\_enabled | Cloudwatch alarms enabled | `bool` | `false` | no |
 | common\_tags | Implements the common tags scheme | `map` | n/a | yes |
 | description | Of the the Lambda | `string` | n/a | yes |
-| envvar | Optional set of environmental variables for the lambda | `map` | <pre>{<br>  "Terraform": "Bug"<br>}<br></pre> | no |
+| envvar | Optional set of environmental variables for the lambda | `map` | <pre>{<br>  "Terraform": "Bug"<br>}</pre> | no |
 | filename | name of zip file if any | `string` | n/a | yes |
 | handler | The file the lambda should import | `string` | `"index.handler"` | no |
 | kms\_master\_key\_id | Add value,  either CMk or alias/aws/sns to enable encryption of SNS | `string` | `""` | no |
@@ -86,6 +86,7 @@ module lexlambda {
 | security\_group\_ids | The IDs of some security groups | `list(string)` | `[]` | no |
 | subnet\_ids | Subnet IDs... | `list(string)` | `[]` | no |
 | timeout | Of the the lambda | `string` | `"100"` | no |
+| tracing\_config | Sets the x-ray tracing mode | `string` | `"Active"` | no |
 | vpc\_config | Optional Vpc attachment config | `map` | `{}` | no |
 
 ## Outputs

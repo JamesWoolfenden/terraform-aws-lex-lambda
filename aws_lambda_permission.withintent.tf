@@ -6,5 +6,5 @@ resource aws_lambda_permission withintent {
   principal     = var.principal
   source_arn    = "arn:aws:lex:${data.aws_region.current.name}:${data.aws_caller_identity.current.account_id}:${lookup(var.lambdapermmissions[count.index], "source_arn")}"
 
-  depends_on = ["aws_lambda_function.withintent"]
+  depends_on = [aws_lambda_function.withintent]
 }

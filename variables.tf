@@ -172,3 +172,9 @@ variable "kms_master_key_id" {
   description = "Add value,  either CMk or alias/aws/sns to enable encryption of SNS"
   default     = ""
 }
+
+variable "tracing_config" {
+  type        = string
+  description = "Sets the x-ray tracing mode"
+  default     = "Active"
+}

@@ -1,4 +1,4 @@
-resource aws_lambda_function withintent {
+resource "aws_lambda_function" "withintent" {
   description   = var.description
   function_name = var.name
   filename      = var.filename
@@ -9,8 +9,11 @@ resource aws_lambda_function withintent {
   runtime       = var.runtime
   s3_bucket     = var.s3_bucket
   s3_key        = var.s3_key
-  tags          = var.common_tags
   timeout       = var.timeout
+
+  tracing_config {
+    mode = var.tracing_config
+  }
 
   environment {
     variables = var.envvar
@@ -23,8 +26,10 @@ resource aws_lambda_function withintent {
 
   lifecycle {
     ignore_changes = [
-      "last_modified",
-      "tags",
+      last_modified,
+      tags,
     ]
   }
+
+  tags = var.common_tags
 }
