@@ -1,6 +1,6 @@
 provider aws {
   region  = "eu-west-1"
-  version = "2.61"
+  version = "2.68.0"
 }
 
 provider archive {
