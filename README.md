@@ -7,7 +7,7 @@ terraform-aws-lex-lambda
 [![Build Status](https://github.com/JamesWoolfenden/terraform-aws-lex-lambda/workflows/Verify%20and%20Bump/badge.svg?branch=master)](https://github.com/JamesWoolfenden/terraform-aws-lex-lambda)
 [![Latest Release](https://img.shields.io/github/release/JamesWoolfenden/terraform-aws-lex-lambda.svg)](https://github.com/JamesWoolfenden/terraform-aws-lex-lambda/releases/latest)
 [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
-[![pre-commit](https://img.shields.io/badge/checkov-verified-brightgreen)](https://www.checkov.io/)
+[![checkov](https://img.shields.io/badge/checkov-verified-brightgreen)](https://www.checkov.io/)
 
 The terraform module creates lambda with permissions, for my purposes a lex lambda combination bit options for IAM and CLoudwatch.
 To use a lambda with an intent a number of other objects are either required. In this module I have included a number of reasonable default values.
@@ -22,7 +22,7 @@ It's 100% Open Source and licensed under the [APACHE2](LICENSE).
 
 ## Usage
 
-This is a minimal example **ExampleA**, but with Cloudwatch alarms enabled.
+This is a minimal example **Examplea**, but with Cloudwatch alarms enabled.
 
 ```terraform
 module lexlambda {
