@@ -1,5 +1,3 @@
-[![Slalom][logo]](https://slalom.com)
-
 # terraform-aws-lex-lambda
 
 terraform-aws-lex-lambda
@@ -46,6 +44,7 @@ module lexlambda {
 ```
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+
 ## Requirements
 
 No requirements.
@@ -53,55 +52,55 @@ No requirements.
 ## Providers
 
 | Name | Version |
-|------|---------|
-| aws | n/a |
+| ---- | ------- |
+| aws  | n/a     |
 
 ## Inputs
 
-| Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:--------:|
-| account\_id | The Aws account the policy or object should target | `string` | n/a | yes |
-| action | Action for the Lambda permission | `string` | `"lambda:InvokeFunction"` | no |
-| alarms\_enabled | Cloudwatch alarms enabled | `bool` | `false` | no |
-| common\_tags | Implements the common tags scheme | `map` | n/a | yes |
-| description | Of the the Lambda | `string` | n/a | yes |
-| envvar | Optional set of environmental variables for the lambda | `map` | <pre>{<br>  "Terraform": "Bug"<br>}</pre> | no |
-| filename | name of zip file if any | `string` | `null` | no |
-| handler | The file the lambda should import | `string` | `"index.handler"` | no |
-| kms\_master\_key\_id | Add value,  either CMk or alias/aws/sns to enable encryption of SNS | `string` | `""` | no |
-| lambdapermmissions | This takes a list object with values to set permissions of a lambda. Can take multiple permission objects | `list` | `[]` | no |
-| layers | Optionally, add in up 5 lambda layers | `list` | `[]` | no |
-| memory\_size | Of the the lambda | `string` | `"128"` | no |
-| metric\_comparison\_operator | For Cloudwatch Alarms | `string` | `"GreaterThanThreshold"` | no |
-| metric\_datapoints\_to\_alarm | For Cloudwatch Alarms | `number` | `1` | no |
-| metric\_evaluation\_periods | For Cloudwatch Alarms | `number` | `1` | no |
-| metric\_metric\_name | n/a | `string` | `"Invocations"` | no |
-| metric\_period | n/a | `number` | `300` | no |
-| metric\_statistic | n/a | `string` | `"Average"` | no |
-| metric\_threshold | n/a | `number` | `100` | no |
-| name | Name of Lambda object | `string` | n/a | yes |
-| prefixdash | Support for renaming on multi-environments | `string` | `""` | no |
-| principal | n/a | `string` | `"lex.amazonaws.com"` | no |
-| region\_name | Aws region name, eu-west-1... | `string` | n/a | yes |
-| role\_arn | The name you want your IAM role to have | `string` | n/a | yes |
-| runtime | Language the code runs in | `string` | `"nodejs8.10"` | no |
-| s3\_bucket | path to the lambda bucket | `string` | `null` | no |
-| s3\_key | path to the lambda zip | `string` | `null` | no |
-| security\_group\_ids | The IDs of some security groups | `list(string)` | `[]` | no |
-| subnet\_ids | Subnet IDs... | `list(string)` | `[]` | no |
-| timeout | Of the the lambda | `string` | `"100"` | no |
-| tracing\_config | Sets the x-ray tracing mode | `string` | `"Active"` | no |
-| vpc\_config | Optional Vpc attachment config | `map` | `{}` | no |
+| Name                       | Description                                                                                               | Type           | Default                                  | Required |
+| -------------------------- | --------------------------------------------------------------------------------------------------------- | -------------- | ---------------------------------------- | :------: |
+| account_id                 | The Aws account the policy or object should target                                                        | `string`       | n/a                                      |   yes    |
+| action                     | Action for the Lambda permission                                                                          | `string`       | `"lambda:InvokeFunction"`                |    no    |
+| alarms_enabled             | Cloudwatch alarms enabled                                                                                 | `bool`         | `false`                                  |    no    |
+| common_tags                | Implements the common tags scheme                                                                         | `map`          | n/a                                      |   yes    |
+| description                | Of the the Lambda                                                                                         | `string`       | n/a                                      |   yes    |
+| envvar                     | Optional set of environmental variables for the lambda                                                    | `map`          | <pre>{<br> "Terraform": "Bug"<br>}</pre> |    no    |
+| filename                   | name of zip file if any                                                                                   | `string`       | `null`                                   |    no    |
+| handler                    | The file the lambda should import                                                                         | `string`       | `"index.handler"`                        |    no    |
+| kms_master_key_id          | Add value, either CMk or alias/aws/sns to enable encryption of SNS                                        | `string`       | `""`                                     |    no    |
+| lambdapermmissions         | This takes a list object with values to set permissions of a lambda. Can take multiple permission objects | `list`         | `[]`                                     |    no    |
+| layers                     | Optionally, add in up 5 lambda layers                                                                     | `list`         | `[]`                                     |    no    |
+| memory_size                | Of the the lambda                                                                                         | `string`       | `"128"`                                  |    no    |
+| metric_comparison_operator | For Cloudwatch Alarms                                                                                     | `string`       | `"GreaterThanThreshold"`                 |    no    |
+| metric_datapoints_to_alarm | For Cloudwatch Alarms                                                                                     | `number`       | `1`                                      |    no    |
+| metric_evaluation_periods  | For Cloudwatch Alarms                                                                                     | `number`       | `1`                                      |    no    |
+| metric_metric_name         | n/a                                                                                                       | `string`       | `"Invocations"`                          |    no    |
+| metric_period              | n/a                                                                                                       | `number`       | `300`                                    |    no    |
+| metric_statistic           | n/a                                                                                                       | `string`       | `"Average"`                              |    no    |
+| metric_threshold           | n/a                                                                                                       | `number`       | `100`                                    |    no    |
+| name                       | Name of Lambda object                                                                                     | `string`       | n/a                                      |   yes    |
+| prefixdash                 | Support for renaming on multi-environments                                                                | `string`       | `""`                                     |    no    |
+| principal                  | n/a                                                                                                       | `string`       | `"lex.amazonaws.com"`                    |    no    |
+| region_name                | Aws region name, eu-west-1...                                                                             | `string`       | n/a                                      |   yes    |
+| role_arn                   | The name you want your IAM role to have                                                                   | `string`       | n/a                                      |   yes    |
+| runtime                    | Language the code runs in                                                                                 | `string`       | `"nodejs8.10"`                           |    no    |
+| s3_bucket                  | path to the lambda bucket                                                                                 | `string`       | `null`                                   |    no    |
+| s3_key                     | path to the lambda zip                                                                                    | `string`       | `null`                                   |    no    |
+| security_group_ids         | The IDs of some security groups                                                                           | `list(string)` | `[]`                                     |    no    |
+| subnet_ids                 | Subnet IDs...                                                                                             | `list(string)` | `[]`                                     |    no    |
+| timeout                    | Of the the lambda                                                                                         | `string`       | `"100"`                                  |    no    |
+| tracing_config             | Sets the x-ray tracing mode                                                                               | `string`       | `"Active"`                               |    no    |
+| vpc_config                 | Optional Vpc attachment config                                                                            | `map`          | `{}`                                     |    no    |
 
 ## Outputs
 
-| Name | Description |
-|------|-------------|
-| lambda | n/a |
-| lambda\_arn | n/a |
-| memory\_size | n/a |
-| source\_code\_size | n/a |
-| timeout | n/a |
+| Name             | Description |
+| ---------------- | ----------- |
+| lambda           | n/a         |
+| lambda_arn       | n/a         |
+| memory_size      | n/a         |
+| source_code_size | n/a         |
+| timeout          | n/a         |
 
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
@@ -125,7 +124,7 @@ Please use the [issue tracker](https://github.com/JamesWoolfenden/terraform-aws-
 
 ## Copyrights
 
-Copyright © 2019-2020 [Slalom, LLC](https://slalom.com)
+Copyright © 2019-2020 James Woolfenden
 
 ## License
 
@@ -134,19 +133,19 @@ Copyright © 2019-2020 [Slalom, LLC](https://slalom.com)
 See [LICENSE](LICENSE) for full details.
 
 Licensed to the Apache Software Foundation (ASF) under one
-or more contributor license agreements.  See the NOTICE file
+or more contributor license agreements. See the NOTICE file
 distributed with this work for additional information
-regarding copyright ownership.  The ASF licenses this file
+regarding copyright ownership. The ASF licenses this file
 to you under the Apache License, Version 2.0 (the
 "License"); you may not use this file except in compliance
-with the License.  You may obtain a copy of the License at
+with the License. You may obtain a copy of the License at
 
 <https://www.apache.org/licenses/LICENSE-2.0>
 
 Unless required by applicable law or agreed to in writing,
 software distributed under the License is distributed on an
 "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-KIND, either express or implied.  See the License for the
+KIND, either express or implied. See the License for the
 specific language governing permissions and limitations
 under the License.
 
@@ -156,12 +155,9 @@ under the License.
 
 [jameswoolfenden_homepage]: https://github.com/jameswoolfenden
 [jameswoolfenden_avatar]: https://github.com/jameswoolfenden.png?size=150
-[logo]: https://gist.githubusercontent.com/JamesWoolfenden/5c457434351e9fe732ca22b78fdd7d5e/raw/15933294ae2b00f5dba6557d2be88f4b4da21201/slalom-logo.png
-[website]: https://slalom.com
 [github]: https://github.com/jameswoolfenden
 [linkedin]: https://www.linkedin.com/in/jameswoolfenden/
 [twitter]: https://twitter.com/JimWoolfenden
-
 [share_twitter]: https://twitter.com/intent/tweet/?text=terraform-aws-lex-lambda&url=https://github.com/JamesWoolfenden/terraform-aws-lex-lambda
 [share_linkedin]: https://www.linkedin.com/shareArticle?mini=true&title=terraform-aws-lex-lambda&url=https://github.com/JamesWoolfenden/terraform-aws-lex-lambda
 [share_reddit]: https://reddit.com/submit/?url=https://github.com/JamesWoolfenden/terraform-aws-lex-lambda
