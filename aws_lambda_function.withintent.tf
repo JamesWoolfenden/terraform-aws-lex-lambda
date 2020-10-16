@@ -12,7 +12,7 @@ resource "aws_lambda_function" "withintent" {
   timeout       = var.timeout
 
   tracing_config {
-    mode = var.tracing_config
+    mode = "PassThrough"
   }
 
   environment {
