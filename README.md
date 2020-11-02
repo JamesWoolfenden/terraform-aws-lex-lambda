@@ -6,6 +6,7 @@ terraform-aws-lex-lambda
 [![Latest Release](https://img.shields.io/github/release/JamesWoolfenden/terraform-aws-lex-lambda.svg)](https://github.com/JamesWoolfenden/terraform-aws-lex-lambda/releases/latest)
 [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
 [![checkov](https://img.shields.io/badge/checkov-verified-brightgreen)](https://www.checkov.io/)
+[![AWS CIS](https://www.bridgecrew.cloud/badges/github/jameswoolfenden/terraform-aws-lex-lambda/cis_aws)](https://www.bridgecrew.cloud/incidents/?ALL_SEVERITY=true&Open=true&accounts=JamesWoolfenden%2Fterraform-aws-lex-lambda&benchmarks=CIS+AWS+V1.2)
 
 The terraform module creates lambda with permissions, for my purposes a lex lambda combination bit options for IAM and CLoudwatch.
 To use a lambda with an intent a number of other objects are either required. In this module I have included a number of reasonable default values.
