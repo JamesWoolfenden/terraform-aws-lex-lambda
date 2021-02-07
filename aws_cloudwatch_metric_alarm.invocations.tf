@@ -1,4 +1,4 @@
-resource aws_cloudwatch_metric_alarm invocations {
+resource "aws_cloudwatch_metric_alarm" "invocations" {
   count                     = var.alarms_enabled == true ? 1 : 0
   insufficient_data_actions = []
   actions_enabled           = true

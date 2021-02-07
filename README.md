@@ -14,7 +14,7 @@ terraform-aws-lex-lambda
 The terraform module creates lambda with permissions, for my purposes a lex lambda combination bit options for IAM and CLoudwatch.
 To use a lambda with an intent a number of other objects are either required. In this module I have included a number of reasonable default values.
 This should make it easier to build the lambdas that go with your lex objects.
-The lamda permission is a array/list this means you can add as many permissions to lambda as you need to.
+The Lamda permission is a array/list this means you can add as many permissions to lambda as you need to.
 
 How to use this project:
 
@@ -65,14 +65,14 @@ No requirements.
 | account\_id | The Aws account the policy or object should target | `string` | n/a | yes |
 | action | Action for the Lambda permission | `string` | `"lambda:InvokeFunction"` | no |
 | alarms\_enabled | Cloudwatch alarms enabled | `bool` | `false` | no |
-| common\_tags | Implements the common tags scheme | `map` | n/a | yes |
+| common\_tags | Implements the common tags scheme | `map(any)` | n/a | yes |
 | description | Of the the Lambda | `string` | n/a | yes |
-| envvar | Optional set of environmental variables for the lambda | `map` | <pre>{<br>  "Terraform": "Bug"<br>}</pre> | no |
+| envvar | Optional set of environmental variables for the lambda | `map(any)` | <pre>{<br>  "Terraform": "Bug"<br>}</pre> | no |
 | filename | name of zip file if any | `string` | `null` | no |
 | handler | The file the lambda should import | `string` | `"index.handler"` | no |
-| kms\_master\_key\_id | Add value,  either CMk or alias/aws/sns to enable encryption of SNS | `string` | `""` | no |
-| lambdapermmissions | This takes a list object with values to set permissions of a lambda. Can take multiple permission objects | `list` | `[]` | no |
-| layers | Optionally, add in up 5 lambda layers | `list` | `[]` | no |
+| kms\_master\_key\_id | Add value, either CMK or alias/aws/sns to enable encryption of SNS, Cloudwatch | `string` | `""` | no |
+| lambdapermmissions | This takes a list object with values to set permissions of a lambda. Can take multiple permission objects | `list(any)` | `[]` | no |
+| layers | Optionally, add in up 5 lambda layers | `list(any)` | `[]` | no |
 | memory\_size | Of the the lambda | `string` | `"128"` | no |
 | metric\_comparison\_operator | For Cloudwatch Alarms | `string` | `"GreaterThanThreshold"` | no |
 | metric\_datapoints\_to\_alarm | For Cloudwatch Alarms | `number` | `1` | no |
@@ -93,7 +93,7 @@ No requirements.
 | subnet\_ids | Subnet IDs... | `list(string)` | `[]` | no |
 | timeout | Of the the lambda | `string` | `"100"` | no |
 | tracing\_config | Sets the x-ray tracing mode | `string` | `"Active"` | no |
-| vpc\_config | Optional Vpc attachment config | `map` | `{}` | no |
+| vpc\_config | Optional Vpc attachment config | `map(any)` | `{}` | no |
 
 ## Outputs
 

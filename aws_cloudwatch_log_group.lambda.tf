@@ -1,4 +1,5 @@
-resource aws_cloudwatch_log_group lambda {
+resource "aws_cloudwatch_log_group" "lambda" {
   name              = "/aws/lambda/${var.name}"
   retention_in_days = 14
+  kms_key_id        = kms_master_key_id
 }

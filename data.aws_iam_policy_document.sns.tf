@@ -1,4 +1,4 @@
-data aws_iam_policy_document sns {
+data "aws_iam_policy_document" "sns" {
   statement {
     actions = [
       "SNS:AddPermission",
