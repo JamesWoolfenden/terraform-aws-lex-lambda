@@ -56,71 +56,71 @@ No requirements.
 
 | Name | Version |
 |------|---------|
-| aws | n/a |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | n/a |
 
 ## Modules
 
-No Modules.
+No modules.
 
 ## Resources
 
-| Name |
-|------|
-| [aws_caller_identity](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/caller_identity) |
-| [aws_cloudwatch_log_group](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudwatch_log_group) |
-| [aws_cloudwatch_metric_alarm](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudwatch_metric_alarm) |
-| [aws_iam_policy_document](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/iam_policy_document) |
-| [aws_lambda_function](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/lambda_function) |
-| [aws_lambda_permission](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/lambda_permission) |
-| [aws_region](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/region) |
-| [aws_sns_topic](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/sns_topic) |
+| Name | Type |
+|------|------|
+| [aws_cloudwatch_log_group.lambda](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudwatch_log_group) | resource |
+| [aws_cloudwatch_metric_alarm.invocations](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudwatch_metric_alarm) | resource |
+| [aws_lambda_function.withintent](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/lambda_function) | resource |
+| [aws_lambda_permission.withintent](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/lambda_permission) | resource |
+| [aws_sns_topic.lambda](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/sns_topic) | resource |
+| [aws_caller_identity.current](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/caller_identity) | data source |
+| [aws_iam_policy_document.sns](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/iam_policy_document) | data source |
+| [aws_region.current](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/region) | data source |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| account\_id | The Aws account the policy or object should target | `string` | n/a | yes |
-| action | Action for the Lambda permission | `string` | `"lambda:InvokeFunction"` | no |
-| alarms\_enabled | Cloudwatch alarms enabled | `bool` | `false` | no |
-| common\_tags | Implements the common tags scheme | `map(any)` | n/a | yes |
-| description | Of the the Lambda | `string` | n/a | yes |
-| envvar | Optional set of environmental variables for the lambda | `map(any)` | <pre>{<br>  "Terraform": "Bug"<br>}</pre> | no |
-| filename | name of zip file if any | `string` | `null` | no |
-| handler | The file the lambda should import | `string` | `"index.handler"` | no |
-| kms\_master\_key\_id | Add value, either CMK or alias/aws/sns to enable encryption of SNS, Cloudwatch | `string` | `""` | no |
-| lambdapermmissions | This takes a list object with values to set permissions of a lambda. Can take multiple permission objects | `list(any)` | `[]` | no |
-| layers | Optionally, add in up 5 lambda layers | `list(any)` | `[]` | no |
-| memory\_size | Of the the lambda | `string` | `"128"` | no |
-| metric\_comparison\_operator | For Cloudwatch Alarms | `string` | `"GreaterThanThreshold"` | no |
-| metric\_datapoints\_to\_alarm | For Cloudwatch Alarms | `number` | `1` | no |
-| metric\_evaluation\_periods | For Cloudwatch Alarms | `number` | `1` | no |
-| metric\_metric\_name | n/a | `string` | `"Invocations"` | no |
-| metric\_period | n/a | `number` | `300` | no |
-| metric\_statistic | n/a | `string` | `"Average"` | no |
-| metric\_threshold | n/a | `number` | `100` | no |
-| name | Name of Lambda object | `string` | n/a | yes |
-| prefixdash | Support for renaming on multi-environments | `string` | `""` | no |
-| principal | n/a | `string` | `"lex.amazonaws.com"` | no |
-| region\_name | Aws region name, eu-west-1... | `string` | n/a | yes |
-| role\_arn | The name you want your IAM role to have | `string` | n/a | yes |
-| runtime | Language the code runs in | `string` | `"nodejs8.10"` | no |
-| s3\_bucket | path to the lambda bucket | `string` | `null` | no |
-| s3\_key | path to the lambda zip | `string` | `null` | no |
-| security\_group\_ids | The IDs of some security groups | `list(string)` | `[]` | no |
-| subnet\_ids | Subnet IDs... | `list(string)` | `[]` | no |
-| timeout | Of the the lambda | `string` | `"100"` | no |
-| tracing\_config | Sets the x-ray tracing mode | `string` | `"Active"` | no |
-| vpc\_config | Optional Vpc attachment config | `map(any)` | `{}` | no |
+| <a name="input_account_id"></a> [account\_id](#input\_account\_id) | The Aws account the policy or object should target | `string` | n/a | yes |
+| <a name="input_action"></a> [action](#input\_action) | Action for the Lambda permission | `string` | `"lambda:InvokeFunction"` | no |
+| <a name="input_alarms_enabled"></a> [alarms\_enabled](#input\_alarms\_enabled) | Cloudwatch alarms enabled | `bool` | `false` | no |
+| <a name="input_common_tags"></a> [common\_tags](#input\_common\_tags) | Implements the common tags scheme | `map(any)` | n/a | yes |
+| <a name="input_description"></a> [description](#input\_description) | Of the the Lambda | `string` | n/a | yes |
+| <a name="input_envvar"></a> [envvar](#input\_envvar) | Optional set of environmental variables for the lambda | `map(any)` | <pre>{<br>  "Terraform": "Bug"<br>}</pre> | no |
+| <a name="input_filename"></a> [filename](#input\_filename) | name of zip file if any | `string` | `null` | no |
+| <a name="input_handler"></a> [handler](#input\_handler) | The file the lambda should import | `string` | `"index.handler"` | no |
+| <a name="input_kms_master_key_id"></a> [kms\_master\_key\_id](#input\_kms\_master\_key\_id) | Add value, either CMK or alias/aws/sns to enable encryption of SNS, Cloudwatch | `string` | n/a | yes |
+| <a name="input_lambdapermmissions"></a> [lambdapermmissions](#input\_lambdapermmissions) | This takes a list object with values to set permissions of a lambda. Can take multiple permission objects | `list(any)` | `[]` | no |
+| <a name="input_layers"></a> [layers](#input\_layers) | Optionally, add in up 5 lambda layers | `list(any)` | `[]` | no |
+| <a name="input_memory_size"></a> [memory\_size](#input\_memory\_size) | Of the the lambda | `string` | `"128"` | no |
+| <a name="input_metric_comparison_operator"></a> [metric\_comparison\_operator](#input\_metric\_comparison\_operator) | For Cloudwatch Alarms | `string` | `"GreaterThanThreshold"` | no |
+| <a name="input_metric_datapoints_to_alarm"></a> [metric\_datapoints\_to\_alarm](#input\_metric\_datapoints\_to\_alarm) | For Cloudwatch Alarms | `number` | `1` | no |
+| <a name="input_metric_evaluation_periods"></a> [metric\_evaluation\_periods](#input\_metric\_evaluation\_periods) | For Cloudwatch Alarms | `number` | `1` | no |
+| <a name="input_metric_metric_name"></a> [metric\_metric\_name](#input\_metric\_metric\_name) | n/a | `string` | `"Invocations"` | no |
+| <a name="input_metric_period"></a> [metric\_period](#input\_metric\_period) | n/a | `number` | `300` | no |
+| <a name="input_metric_statistic"></a> [metric\_statistic](#input\_metric\_statistic) | n/a | `string` | `"Average"` | no |
+| <a name="input_metric_threshold"></a> [metric\_threshold](#input\_metric\_threshold) | n/a | `number` | `100` | no |
+| <a name="input_name"></a> [name](#input\_name) | Name of Lambda object | `string` | n/a | yes |
+| <a name="input_prefixdash"></a> [prefixdash](#input\_prefixdash) | Support for renaming on multi-environments | `string` | `""` | no |
+| <a name="input_principal"></a> [principal](#input\_principal) | n/a | `string` | `"lex.amazonaws.com"` | no |
+| <a name="input_region_name"></a> [region\_name](#input\_region\_name) | Aws region name, eu-west-1... | `string` | n/a | yes |
+| <a name="input_role_arn"></a> [role\_arn](#input\_role\_arn) | The name you want your IAM role to have | `string` | n/a | yes |
+| <a name="input_runtime"></a> [runtime](#input\_runtime) | Language the code runs in | `string` | `"nodejs8.10"` | no |
+| <a name="input_s3_bucket"></a> [s3\_bucket](#input\_s3\_bucket) | path to the lambda bucket | `string` | `null` | no |
+| <a name="input_s3_key"></a> [s3\_key](#input\_s3\_key) | path to the lambda zip | `string` | `null` | no |
+| <a name="input_security_group_ids"></a> [security\_group\_ids](#input\_security\_group\_ids) | The IDs of some security groups | `list(string)` | `[]` | no |
+| <a name="input_subnet_ids"></a> [subnet\_ids](#input\_subnet\_ids) | Subnet IDs... | `list(string)` | `[]` | no |
+| <a name="input_timeout"></a> [timeout](#input\_timeout) | Of the the lambda | `string` | `"100"` | no |
+| <a name="input_tracing_config"></a> [tracing\_config](#input\_tracing\_config) | Sets the x-ray tracing mode | `string` | `"Active"` | no |
+| <a name="input_vpc_config"></a> [vpc\_config](#input\_vpc\_config) | Optional Vpc attachment config | `map(any)` | `{}` | no |
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
-| lambda | n/a |
-| lambda\_arn | n/a |
-| memory\_size | n/a |
-| source\_code\_size | n/a |
-| timeout | n/a |
+| <a name="output_lambda"></a> [lambda](#output\_lambda) | n/a |
+| <a name="output_lambda_arn"></a> [lambda\_arn](#output\_lambda\_arn) | n/a |
+| <a name="output_memory_size"></a> [memory\_size](#output\_memory\_size) | n/a |
+| <a name="output_source_code_size"></a> [source\_code\_size](#output\_source\_code\_size) | n/a |
+| <a name="output_timeout"></a> [timeout](#output\_timeout) | n/a |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
 ## Related Projects

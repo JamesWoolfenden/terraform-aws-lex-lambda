@@ -1,6 +1,6 @@
 name      = "PizzaOrderProcessor"
-s3_bucket = "wilbur.lambda-553700203877-artifacts"
-role      = "lambda_basic_execution"
+s3_bucket = "echobase"
+role      = "lambda_basic"
 common_tags = {
   modulename = "pizza"
 }

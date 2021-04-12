@@ -170,7 +170,6 @@ variable "metric_threshold" {
 variable "kms_master_key_id" {
   type        = string
   description = "Add value, either CMK or alias/aws/sns to enable encryption of SNS, Cloudwatch"
-  default     = ""
 }
 
 variable "tracing_config" {

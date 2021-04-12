@@ -1,4 +1,6 @@
 resource "aws_lambda_function" "withintent" {
+  # checkov:skip=CKV_AWS_115: ADD REASON
+  # checkov:skip=CKV_AWS_116: ADD REASON
   description   = var.description
   function_name = var.name
   filename      = var.filename
