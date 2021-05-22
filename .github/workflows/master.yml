@@ -45,6 +45,11 @@ jobs:
   costs:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          ref: ${{ env.branch }}
+          token: ${{ github.token }}
       - name: Bills
         run: |
           pip3 install lastversion
