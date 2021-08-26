@@ -4,9 +4,8 @@ terraform {
       version = "3.35.0"
       source  = "hashicorp/aws"
     }
-
     archive = {
-      version = "1.3"
+      version = "1.2"
     }
 
   }
