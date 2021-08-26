@@ -1,0 +1,12 @@
+version: 0.1
+resource_usage:
+  module.lexlambda.aws_cloudwatch_log_group.lambda:
+    monthly_data_ingested_gb: 0
+    monthly_data_scanned_gb: 0
+    storage_gb: 0
+  module.lexlambda.aws_lambda_function.withintent:
+    monthly_requests: 0
+    request_duration_ms: 0
+  module.lexlambda.aws_sns_topic.lambda[0]:
+    monthly_requests: 0
+    request_size_kb: 0
