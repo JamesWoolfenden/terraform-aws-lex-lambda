@@ -13,6 +13,7 @@ module "lexlambda" {
   name              = var.name
   region_name       = data.aws_region.current.name
   role_arn          = data.aws_iam_role.lambda.arn
+  kms_key_id        = aws_kms_key.forlambda.arn
   kms_master_key_id = aws_kms_key.forlambda.id
 }
 

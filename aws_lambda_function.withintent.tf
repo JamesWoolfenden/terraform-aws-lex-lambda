@@ -12,6 +12,7 @@ resource "aws_lambda_function" "withintent" {
   s3_bucket     = var.s3_bucket
   s3_key        = var.s3_key
   timeout       = var.timeout
+  kms_key_arn   = var.kms_key_id
 
   tracing_config {
     mode = "PassThrough"

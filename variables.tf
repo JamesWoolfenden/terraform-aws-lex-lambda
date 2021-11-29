@@ -167,13 +167,19 @@ variable "metric_threshold" {
   default = 100
 }
 
-variable "kms_master_key_id" {
-  type        = string
-  description = "Add value, either CMK or alias/aws/sns to enable encryption of SNS, Cloudwatch"
-}
-
 variable "tracing_config" {
   type        = string
   description = "Sets the x-ray tracing mode"
   default     = "Active"
+}
+
+variable "kms_key_id" {
+  type        = string
+  description = "ARN of CMK for Lambda,SNS"
+}
+
+
+variable "kms_master_key_id" {
+  type        = string
+  description = "ID of CMK for Lambda,SNS"
 }
