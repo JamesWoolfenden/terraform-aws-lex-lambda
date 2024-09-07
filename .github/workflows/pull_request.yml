@@ -5,36 +5,48 @@ on:
   pull_request:
   workflow_dispatch:
 
+env:
+  terraform: 1.3.0
+  tf_target_dir: example/examplea
+
+permissions: read-all
+
 jobs:
   terraform:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
         with:
           token: ${{ github.token }}
           fetch-depth: '0'
       - name: Terraform Init
-        uses: hashicorp/terraform-github-actions@master
+        uses: hashicorp/terraform-github-actions@b2ca17c0c25198c67c668c37edcbc45ca086a91e # v0.8.0
         with:
-          tf_actions_version: 1.0.1
+          tf_actions_version: ${{ env.terraform }}
           tf_actions_subcommand: init
-          tf_actions_working_dir: example/examplea
+          tf_actions_working_dir: ${{ env.tf_target_dir }}
       - name: Terraform Validate
-        uses: hashicorp/terraform-github-actions@master
+        uses: hashicorp/terraform-github-actions@b2ca17c0c25198c67c668c37edcbc45ca086a91e # v0.8.0
         with:
-          tf_actions_version: 1.0.1
+          tf_actions_version: ${{ env.terraform }}
           tf_actions_subcommand: validate
-          tf_actions_working_dir: example/examplea
+          tf_actions_working_dir: ${{ env.tf_target_dir }}
   security:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
         with:
           token: ${{ github.token }}
           fetch-depth: '0'
-      - uses: actions/setup-python@v2
+      - uses: actions/setup-python@f677139bbe7f9c59b41e40162b753c062f5d49a3 # v5.2.0
         with:
-          python-version: 3.8
-      - uses: pre-commit/action@v2.0.0
+          python-version: 3.11
+      - run: |
+          wget https://github.com/terraform-docs/terraform-docs/releases/download/v0.16.0/terraform-docs-v0.16.0-linux-amd64.tar.gz
+          mkdir "$GITHUB_WORKSPACE/bin"
+          tar -xvf terraform-docs*.tar.gz --directory "$GITHUB_WORKSPACE/bin"
+          chmod +x "$GITHUB_WORKSPACE/bin/terraform-docs"
+          echo "$GITHUB_WORKSPACE/bin" >> "$GITHUB_PATH"
+      - uses: pre-commit/action@2c7b3805fd2a0fd8c1884dcaebf91fc102a13ecd # v3.0.1

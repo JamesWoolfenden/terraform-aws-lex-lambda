@@ -16,8 +16,6 @@ module "lexlambda" {
   kms_master_key_id = aws_kms_key.forlambda.id
   kms_key_id        = aws_kms_key.forlambda.id
 }
-
-
 resource "aws_kms_key" "forlambda" {
   enable_key_rotation = true
 }
