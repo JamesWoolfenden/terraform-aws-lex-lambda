@@ -1,4 +1,6 @@
 resource "aws_lambda_function" "withintent" {
+  # checkov:skip=CKV_AWS_272: code signing not required for this minimal example
+  # checkov:skip=CKV_AWS_363: runtime is configurable via var.runtime
   # checkov:skip=CKV_AWS_289: X-Ray tracing not required for this Lambda
   # checkov:skip=CKV_AWS_288: Reserved concurrency not configured for this Lambda
   # checkov:skip=CKV_AWS_284: Log group retention managed separately
